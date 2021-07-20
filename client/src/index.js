@@ -2,16 +2,54 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'
+
+
+// REDUX CODE
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+
+const initialPeriodState = {
+  periods: []
+}
+
+// Return value of reducer is going to become/replaces the new global state
+const periodReducer = (state = initialPeriodState, action) => {
+  switch (action.type) {
+    case "GET_PERIODS":
+    return {
+      ...state,
+      periods: action.payload
+    }
+
+    default:
+      return state
+  }
+  
+}
+
+//CombineReducers take in a POJO as an argument
+  //The keys of that POJO become the highest keys of global state
+    //The values of that POJO are the state objects being returned by the reducer
+let rootReducer = combineReducers({
+  periodInfo: periodReducer
+})
+
+let store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+
+
 
 ReactDOM.render(
+  <Provider store={store}>
+  <BrowserRouter>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
