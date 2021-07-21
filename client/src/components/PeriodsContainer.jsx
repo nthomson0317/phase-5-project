@@ -59,6 +59,8 @@ const useStyles = makeStyles((theme) => ({
  function PeriodsContainer(props) {
     const classes = useStyles();
 
+
+
     console.log(props)
 
     let arrOfPeriods = props.periods.map(period => <Period key={period.id} period={period}/>)
@@ -82,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Eras
+              Periods
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               Something short and leading about the collection below—its contents, the creator, etc.
@@ -110,29 +112,9 @@ const useStyles = makeStyles((theme) => ({
           <Grid container spacing={4}>
             {props.periods.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={card.image_src}
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.name}
-                    </Typography>
-                    <Typography>
-                      {card.era}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
+                 <Period 
+                 period={card}
+                 />
               </Grid>
             ))}
           </Grid>
