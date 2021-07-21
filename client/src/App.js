@@ -33,7 +33,7 @@ function App(props) {
     <NavBar/>
     <Switch>
       <Route path="/periods" render={ renderPeriods} />
-      <Route path="/" exact component={Home} />
+      <Route exact path="/" component={Home} />
     </Switch>
     <div className="App">
         Home
