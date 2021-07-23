@@ -1,19 +1,14 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import {useState, useEffect } from 'react';
+import {useState } from 'react';
+import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 //REDUX
 import { connect } from 'react-redux'
@@ -53,44 +48,52 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
+ function Composer(props) {
 
 
- function Period(props) {
+
     const classes = useStyles();
 
     const [state, setState] = useState({
         raised:false,
         shadow:1,
       })
-    
-    console.log(props)
-    console.log(props.period)
-    console.log(props.card)
 
+      const handleClick = (e) => {
+        console.log(props)
+        
+        props.history.push(`${props.history.location.pathname}/${props.composer.name}/compositions`);
+      }
+
+      
+      console.log(props)
+      console.log(props.composer.name)
+      console.log(props.history)
     return (
         <Card className={classes.card}
         classes={{root: state.raised ? classes.cardHovered : ""}}
         onMouseOver={()=>setState({ raised: true, shadow:3})} 
         onMouseOut={()=>setState({ raised:false, shadow:1 })} 
         raised={state.raised} zdepth={state.shadow}
-                
+        onClick={handleClick}
+             
         >
-            
           <CardMedia
             className={classes.cardMedia}
-            image={props.period.image_src}
+            image={props.composer.portrait}
             title="Image title"
           />
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
-              {props.period.name}
+              {props.composer.name}
             </Typography>
             <Typography>
-              {props.period.era}
+              {props.composer.birth} - {props.composer.death}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary"
+            >
               View
             </Button>
             <Button size="small" color="primary">
@@ -99,13 +102,13 @@ const useStyles = makeStyles((theme) => ({
           </CardActions>
           </Card>
   );
-
 }
 
 let mapStateToProps = (globalState) => {
     return {
-        periods: globalState.periodInfo.periods
+        periods: globalState.periodInfo.periods,
+        composers: globalState.composerInfo.composers
     }
 }
 
-export default connect(mapStateToProps)(Period) 
+export default withRouter(connect(mapStateToProps)(Composer)) 

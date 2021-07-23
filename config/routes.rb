@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :compositions
+  resources :composers
   resources :periods
   
    # Routing logic: fallback requests for React Router.

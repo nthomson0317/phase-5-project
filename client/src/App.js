@@ -3,7 +3,10 @@ import './App.css';
 //COMPONENTS
 import Home from './components/Home'
 import NavBar from './components/NavBar'
-import PeriodsContainer from './components/PeriodsContainer'
+import PeriodsContainer from './components/Periods/PeriodsContainer'
+import ComposersContainer from './components/Composers/ComposersContainer'
+import Composition from './components/Compositions/Composition'
+import CompositionsContainer from './components/Compositions/CompositionsContainer'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -18,26 +21,92 @@ function App(props) {
 
   }, [])
 
+  useEffect(() => {
+    fetch("http://localhost:3000/composers")
+  .then((r) => r.json())
+  .then((composersArray) => {(props.setComposers(composersArray))
+    });
+
+  }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:3000/compositions")
+  .then((r) => r.json())
+  .then((compositionsArray) => {(props.setCompositions(compositionsArray))
+    });
+
+  }, [])
+
     console.log(props)
     
 
   let renderPeriods = (routerProps) => {
-    return <PeriodsContainer />
+    return <PeriodsContainer 
+    history={props.history}/>
   }
 
+  let renderComposers = (routerProps) => {
+    return <ComposersContainer
+    history={props.history}/>
+  }
+
+  let renderPeriodComposers = (routerProps) => {
+    let name = routerProps.match.params.period_name
+
+    //use string to find match in global state.
+    let period = props.periods.find(period => period.name == name)
+    
+      //if found render component
+      if (period){
+      return <ComposersContainer
+      history={props.history}
+      period={period}/>
+    }
+    else {
+      return <Redirect to="/" />
+    } 
+  }
+
+  let renderCompositions = (routerProps) => {
+    return <Composition />
+  }
+
+  let renderComposerCompositions = (routerProps) => {
+    console.log(routerProps)
+    let composer = routerProps.match.params.composer_name
+
+    //use string to find match in global state.
+    let compositions = props.compositions.filter(composition => composition.composer.name == composer)
+    console.log(compositions)
+
+
+
+      //if found render component
+      if (compositions){
+      return <CompositionsContainer
+      history={props.history}
+      compositions={compositions}
+      composer={composer}/>
+    }
+    else {
+      return <Redirect to="/" />
+    } 
+  }
+
+  console.log(props)
   return (
-
-
 
     <div>
     <NavBar/>
     <Switch>
-      <Route path="/periods" render={ renderPeriods} />
+      <Route exact path="/periods" render={renderPeriods} />
+      <Route path="/composers" render={renderComposers} />
+      <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />
+      <Route exact path="/composition" render={renderCompositions} />
+      <Route exact path="/periods/:period_name/composers/:composer_name/compositions" render={renderComposerCompositions} />
       <Route exact path="/" component={Home} />
     </Switch>
-    <div className="App">
-        Home
-    </div>
+
     </div>
   );
 }
@@ -50,8 +119,35 @@ let setPeriods = (allPeriods) => {
   }
 }
 
-let mapDispatchToProps = {
-  setPeriods,
+let setComposers = (allComposers) => {
+
+  return {
+    type: "GET_COMPOSERS",
+    payload: allComposers
+  }
 }
 
-export default connect(null, mapDispatchToProps)(withRouter(App))
+let setCompositions = (allCompositions) => {
+  return {
+    type: "GET_COMPOSITIONS",
+    payload: allCompositions
+  }
+}
+
+let mapStateToProps = (globalState) => {
+  // let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
+  return {
+    periods: globalState.periodInfo.periods,
+    composers: globalState.composerInfo.composers,
+    compositions: globalState.compositionInfo.compositions
+  }
+}
+
+
+let mapDispatchToProps = {
+  setPeriods,
+  setComposers,
+  setCompositions
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
