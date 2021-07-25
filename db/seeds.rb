@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'rspotify'
 
 early = Period.create(name: "Early Music", era: "500-1600", image_src: '/images/early_music.jpeg')
 baroque = Period.create(name: "Baroque", era: "1600-1750", image_src: '/images/baroque.jpeg')
