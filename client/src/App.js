@@ -37,7 +37,7 @@ function App(props) {
 
   }, [])
 
-    console.log(props)
+    // console.log(props)
     
 
   let renderPeriods = (routerProps) => {
@@ -60,7 +60,8 @@ function App(props) {
       if (period){
       return <ComposersContainer
       history={props.history}
-      period={period}/>
+      period={period}
+      />
     }
     else {
       return <Redirect to="/" />
@@ -68,7 +69,8 @@ function App(props) {
   }
 
   let renderCompositions = (routerProps) => {
-    return <Composition />
+    return <Composition 
+    />
   }
 
   let renderComposerCompositions = (routerProps) => {
@@ -77,7 +79,7 @@ function App(props) {
 
     //use string to find match in global state.
     let compositions = props.compositions.filter(composition => composition.composer.name == composer)
-    console.log(compositions)
+    // console.log(compositions)
 
 
 
@@ -86,14 +88,15 @@ function App(props) {
       return <CompositionsContainer
       history={props.history}
       compositions={compositions}
-      composer={composer}/>
+      composer={composer}
+      setCurrentComposition={props.setCurrentComposition}/>
     }
     else {
       return <Redirect to="/" />
     } 
   }
 
-  console.log(props)
+  // console.log(props)
   return (
 
     <div>
@@ -134,12 +137,20 @@ let setCompositions = (allCompositions) => {
   }
 }
 
+let setCurrentComposition = (currentComposition) => {
+  return {
+    type: "GET_CURRENT_COMPOSITION",
+    payload: currentComposition
+  }
+}
+
 let mapStateToProps = (globalState) => {
   // let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
   return {
     periods: globalState.periodInfo.periods,
     composers: globalState.composerInfo.composers,
     compositions: globalState.compositionInfo.compositions
+    // currentComposition: globalState.currentComposition.composition
   }
 }
 
@@ -147,7 +158,8 @@ let mapStateToProps = (globalState) => {
 let mapDispatchToProps = {
   setPeriods,
   setComposers,
-  setCompositions
+  setCompositions,
+  setCurrentComposition
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
  function PeriodsContainer(props) {
     const classes = useStyles();
 
-    console.log(props)
+    // console.log(props)
 
     
     return (

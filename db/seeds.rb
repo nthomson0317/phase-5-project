@@ -197,677 +197,694 @@ end
 
 dufay_compositions
 
-def leonin_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/2/genre/all.json'
-    json = JSON.parse response
-    puts json
+# def leonin_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/2/genre/all.json'
+#     json = JSON.parse response
+#     puts json
 
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 2)
-        end
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 2)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# leonin_compositions
+
+# def machaut_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/3/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 3)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# machaut_compositions
+
+
+# def perotin_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/4/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 4)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# perotin_compositions
+
+# def byrd_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/5/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 5)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# byrd_compositions
+
+# def prez_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/6/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 6)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# prez_compositions
+
+# def dowland_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/7/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 7)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# dowland_compositions
+
+# def gesualdo_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/8/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 8)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# gesualdo_compositions
+
+# def gibbons_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/9/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 9)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# gibbons_compositions
+
+
+# def janequin_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/10/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 10)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# janequin_compositions
+
+# def lassus_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/11/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 11)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# lassus_compositions
+
+# def monteverdi_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/12/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 12)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# monteverdi_compositions
+
+# def obrecht_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/13/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 13)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# obrecht_compositions
+
+# def ockeghem_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/14/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 14)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# ockeghem_compositions
+
+# def palestrina_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/15/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 15)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# palestrina_compositions
+
+# def praetorius_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/16/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 16)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# praetorius_compositions
+
+# def schutz_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/17/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 17)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# schutz_compositions
+
+# def sweelinck_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/18/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 18)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# sweelinck_compositions
+
+# def tallis_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/19/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 19)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# tallis_compositions
+
+# def taverner_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/20/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 20)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# taverner_compositions
+
+# def victoria_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/21/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 21)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# victoria_compositions
+
+# def albinoni_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/22/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 22)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# albinoni_compositions
+
+# def bach_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/23/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 23)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# bach_compositions
+
+# def biber_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/24/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 24)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# biber_compositions
+
+# def buxtehude_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/25/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 25)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# buxtehude_compositions
+
+# def charpentier_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/26/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 26)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# charpentier_compositions
+
+# def corelli_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/27/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 27)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# corelli_compositions
+
+# def couperin_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/28/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 28)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# couperin_compositions
+
+# def frescobaldi_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/29/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 29)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# frescobaldi_compositions
+
+# def handel_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/30/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 30)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# handel_compositions
+
+# def lully_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/31/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 31)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# lully_compositions
+
+# def marais_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/32/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 32)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# marais_compositions
+
+# def b_marcello_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/33/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 33)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# b_marcello_compositions
+
+# def a_marcello_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/34/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 34)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# a_marcello_compositions
+
+# def pachelbel_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/35/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 35)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# pachelbel_compositions
+
+# def pergolesi_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/36/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 36)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# pergolesi_compositions
+
+# def purcell_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/37/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 37)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# purcell_compositions
+
+# def rameau_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/38/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 38)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# rameau_compositions
+
+# def scarlatti_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/39/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 39)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# scarlatti_compositions
+
+# def a_scarlatti_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/40/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 40)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# a_scarlatti_compositions
+
+# def tartini_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/41/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 41)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# tartini_compositions
+
+# def telemann_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/42/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 42)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
+
+# telemann_compositions
+
+# def vivaldi_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
+#     json = JSON.parse response
+#     puts json
+
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+#  end
+
+# vivaldi_compositions
+
+Composition.all.each do |composition| 
+    # sleep 4
+    begin
+    RSpotify.authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
+        tracks = RSpotify::Track.search(composition[:name])
+        track = tracks.first
+        # byebug
+    rescue NoMethodError => e
+        
     else
-        puts "Error seeding compositions"
+        id = track.instance_variable_get('@id')
+        composition.update(spotify_id: id)
     end
 end
 
-leonin_compositions
 
-def machaut_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/3/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 3)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-machaut_compositions
-
-
-def perotin_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/4/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 4)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-perotin_compositions
-
-def byrd_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/5/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 5)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-byrd_compositions
-
-def prez_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/6/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 6)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-prez_compositions
-
-def dowland_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/7/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 7)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-dowland_compositions
-
-def gesualdo_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/8/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 8)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-gesualdo_compositions
-
-def gibbons_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/9/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 9)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-gibbons_compositions
-
-
-def janequin_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/10/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 10)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-janequin_compositions
-
-def lassus_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/11/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 11)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-lassus_compositions
-
-def monteverdi_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/12/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 12)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-monteverdi_compositions
-
-def obrecht_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/13/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 13)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-obrecht_compositions
-
-def ockeghem_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/14/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 14)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-ockeghem_compositions
-
-def palestrina_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/15/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 15)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-palestrina_compositions
-
-def praetorius_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/16/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 16)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-praetorius_compositions
-
-def schutz_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/17/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 17)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-schutz_compositions
-
-def sweelinck_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/18/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 18)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-sweelinck_compositions
-
-def tallis_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/19/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 19)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-tallis_compositions
-
-def taverner_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/20/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 20)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-taverner_compositions
-
-def victoria_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/21/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 21)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-victoria_compositions
-
-def albinoni_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/22/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 22)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-albinoni_compositions
-
-def bach_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/23/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 23)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-bach_compositions
-
-def biber_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/24/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 24)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-biber_compositions
-
-def buxtehude_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/25/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 25)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-buxtehude_compositions
-
-def charpentier_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/26/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 26)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-charpentier_compositions
-
-def corelli_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/27/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 27)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-corelli_compositions
-
-def couperin_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/28/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 28)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-couperin_compositions
-
-def frescobaldi_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/29/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 29)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-frescobaldi_compositions
-
-def handel_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/30/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 30)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-handel_compositions
-
-def lully_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/31/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 31)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-lully_compositions
-
-def marais_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/32/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 32)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-marais_compositions
-
-def b_marcello_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/33/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 33)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-b_marcello_compositions
-
-def a_marcello_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/34/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 34)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-a_marcello_compositions
-
-def pachelbel_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/35/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 35)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-pachelbel_compositions
-
-def pergolesi_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/36/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 36)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-pergolesi_compositions
-
-def purcell_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/37/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 37)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-purcell_compositions
-
-def rameau_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/38/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 38)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-rameau_compositions
-
-def scarlatti_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/39/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 39)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-scarlatti_compositions
-
-def a_scarlatti_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/40/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 40)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-a_scarlatti_compositions
-
-def tartini_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/41/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 41)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-tartini_compositions
-
-def telemann_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/42/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 42)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-telemann_compositions
-
-def vivaldi_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
-    json = JSON.parse response
-    puts json
-
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
-
-vivaldi_compositions
-
+        # comp = Composition.find_by(id: composition_params[:id])

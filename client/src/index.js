@@ -60,13 +60,31 @@ const compositionReducer = (state = initialCompositionState, action) => {
   }
 }
 
+//CURRENT COMPOSITION STATE
+const initialCurrentCompositionState = {
+  currentComposition: ""
+}
+
+const currentCompositionReducer = (state = initialCurrentCompositionState, action) => {
+  switch (action.type) {
+    case "GET_CURRENT_COMPOSITION":
+      return {
+        ...state,
+        currentComposition: action.payload
+      }
+      default:
+        return state
+  }
+}
+
 //CombineReducers take in a POJO as an argument
   //The keys of that POJO become the highest keys of global state
     //The values of that POJO are the state objects being returned by the reducer
 let rootReducer = combineReducers({
   periodInfo: periodReducer,
   composerInfo: composerReducer,
-  compositionInfo: compositionReducer
+  compositionInfo: compositionReducer,
+  currentCompositionInfo: currentCompositionReducer,
 })
 
 let store = createStore(

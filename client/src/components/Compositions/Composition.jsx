@@ -8,9 +8,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
+import {connect} from 'react-redux'
+import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 
 
-export default function Composition(props) {
+ function Composition(props) {
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -42,14 +44,16 @@ export default function Composition(props) {
         fetch(`http://localhost:3000/compositions/${props.value.id}`, {
             })
             .then(res => res.json())
-            .then((res) => console.log(res))
+            .then((res) => props.setCurrentComposition(res.id))
+            // .then return (checked.length > 2 ? 
+            //     <iframe src={`https://open.spotify.com/embed/track/${res.id}`} width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe> : nill)
+
     
     
-        // return(
-        //   <iframe src="https://open.spotify.com/embed/track/5hIAxKRvXEEi8gRnWzrWPT" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        // )
+
       }
-   
+      console.log(props.currentComposition)
+      
 
     return (
         <div>
@@ -71,7 +75,14 @@ export default function Composition(props) {
             </ListItemSecondaryAction>
           </ListItem>
 
+
             
         </div>
     )
 }
+let mapStateToProps = (globalState) => {
+    return {
+        currentComposition: globalState.currentCompositionInfo.currentComposition
+    }
+  }
+  export default withRouter(connect(mapStateToProps)(Composition)) 

@@ -9,6 +9,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
 import Composition from './Composition'
+import {connect} from 'react-redux'
+import Button from '@material-ui/core/Button';
+import CompositionPlayer from './CompositionPlayer'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function CompositionsContainer(props) {
+ function CompositionsContainer(props) {
 
     const classes = useStyles();
-  const [checked, setChecked] = React.useState([0]);
+    const [toggled, setToggled] = React.useState(false)
+  // const [checked, setChecked] = React.useState([0]);
 
   // const handleToggle = (value) => () => {
   //   const currentIndex = checked.indexOf(value);
@@ -36,10 +40,32 @@ export default function CompositionsContainer(props) {
   //   setChecked(newChecked);
   // };
 
+// console.log(props.currentComposition.composition)
+console.log(props.currentComposition)
+console.log(toggled)
+
+const handleClick = () => {
+  setToggled(!toggled)
+}
+
+const renderPlayer = () => {
+   
+  
+  
+  
+ 
+  }
+
 
     return (
         <div>
-          <iframe src="https://open.spotify.com/embed/track/5hIAxKRvXEEi8gRnWzrWPT" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+           <Button variant="outlined" color="secondary"
+           onClick={handleClick}>
+        Play Composition
+      </Button>
+      <div>
+          {toggled ?  <CompositionPlayer /> :  null}
+          </div>
     <List className={classes.root}>
       {props.compositions.map((value) => {
         const labelId = `checkbox-list-label-${value}`;
@@ -47,7 +73,8 @@ export default function CompositionsContainer(props) {
         return (
           <Composition
           labelId={labelId}
-          value={value}/>
+          value={value}
+          setCurrentComposition={props.setCurrentComposition}/>
 
         );
       })}
@@ -55,3 +82,10 @@ export default function CompositionsContainer(props) {
     </div>
     )
 }
+
+let mapStateToProps = (globalState) => {
+  return {
+      currentComposition: globalState.currentCompositionInfo.currentComposition
+  }
+}
+export default connect(mapStateToProps)(CompositionsContainer) 
