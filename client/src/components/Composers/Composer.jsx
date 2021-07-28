@@ -66,9 +66,9 @@ const useStyles = makeStyles((theme) => ({
       }
 
       
-      console.log(props)
-      console.log(props.composer.name)
-      console.log(props.history)
+      // console.log(props)
+      // console.log(props.composer.name)
+      // console.log(props.history)
     return (
         <Card className={classes.card}
         classes={{root: state.raised ? classes.cardHovered : ""}}

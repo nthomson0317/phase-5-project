@@ -181,21 +181,21 @@ contemporary_composers
 #Compositions seeding from Open Opus
 #/work/list/composer/129/genre/Popular.json
 
-def dufay_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/1/genre/all.json'
-    json = JSON.parse response
-    puts json
+# def dufay_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/1/genre/all.json'
+#     json = JSON.parse response
+#     puts json
 
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 1)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 1)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
 
-dufay_compositions
+# dufay_compositions
 
 # def leonin_compositions
 #     response = RestClient.get 'https://api.openopus.org/work/list/composer/2/genre/all.json'
@@ -871,6 +871,23 @@ dufay_compositions
 
 # vivaldi_compositions
 
+
+def schumann_compositions
+    response = RestClient.get 'https://api.openopus.org/work/list/composer/129/genre/all.json'
+    json = JSON.parse response
+    puts json
+
+    if !json.nil?
+        json["works"].map do |composition|
+            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 94)
+        end
+    else
+        puts "Error seeding compositions"
+    end
+ end
+
+schumann_compositions
+
 Composition.all.each do |composition| 
     # sleep 4
     begin
@@ -883,8 +900,17 @@ Composition.all.each do |composition|
     else
         id = track.instance_variable_get('@id')
         composition.update(spotify_id: id)
+        # byebug
     end
 end
 
+    # Composition.where(spotify_id: nil).destroy_all
+
+
+
+
 
         # comp = Composition.find_by(id: composition_params[:id])
+
+
+        # composition.composer.name  + ' ' + 

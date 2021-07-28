@@ -52,6 +52,8 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
     
 
       }
+      console.log(props)
+      console.log(props.value)
       console.log(props.currentComposition)
       
 

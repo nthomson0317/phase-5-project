@@ -48,13 +48,6 @@ const handleClick = () => {
   setToggled(!toggled)
 }
 
-const renderPlayer = () => {
-   
-  
-  
-  
- 
-  }
 
 
     return (

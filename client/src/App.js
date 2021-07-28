@@ -7,6 +7,7 @@ import PeriodsContainer from './components/Periods/PeriodsContainer'
 import ComposersContainer from './components/Composers/ComposersContainer'
 import Composition from './components/Compositions/Composition'
 import CompositionsContainer from './components/Compositions/CompositionsContainer'
+import Register from './components/Register'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -96,12 +97,17 @@ function App(props) {
     } 
   }
 
+  const renderRegistrationForm = (routerProps) => {
+    return <Register />
+  }
+
   // console.log(props)
   return (
 
     <div>
     <NavBar/>
     <Switch>
+      <Route path="/register" render={ renderRegistrationForm } />
       <Route exact path="/periods" render={renderPeriods} />
       <Route path="/composers" render={renderComposers} />
       <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />

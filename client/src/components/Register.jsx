@@ -47,25 +47,22 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function Home(props) {
+export default function Register(props) {
     const classes = useStyles();
     //STATE ONE
     const [username, setUsername]=useState('')
     //STATE TWO
     const [password, setPassword]=useState('')
-    //STATE THREE
-    const [token, setToken]=useState('')
 
-    
     const handleSubmit = (e) => {
-    e.preventDefault()
+      e.preventDefault()
       let formData = { 
         username: username,    
-        password: password,}      
+        password: password}      
         // props.handleSubmit(formData)
-        console.log("Login form has been submitted")
-        
-        fetch("http://localhost:3000/login", {
+        console.log("Register form has been submitted")
+
+        fetch("http://localhost:3000/users", {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
@@ -78,23 +75,14 @@ export default function Home(props) {
     }
 
     const handleResponse = (resp) => {
-      if(resp.token){
-        setUsername({
-          username: resp.user.username
-        })
-        setPassword({
-          password: resp.user.password
-        })
-        setToken({
-          token: resp.token
-        })
-        props.history.push("/periods")
-      }
-          else {
-              alert("Messed up")
-          }
-      }
-  
+        if(resp.token){
+            console.log("User successful")
+        }
+            else {
+                alert("Messed up")
+            }
+        }
+    
   
     const handleChangeUsername = (e) => {
       setUsername(e.target.value)
@@ -114,7 +102,7 @@ export default function Home(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Register
         </Typography>
         <form className={classes.form} 
         noValidate
@@ -156,9 +144,9 @@ export default function Home(props) {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Register
           </Button>
-          <Grid container>
+          {/* <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
@@ -169,7 +157,7 @@ export default function Home(props) {
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
-          </Grid>
+          </Grid> */}
         </form>
       </div>
       <Box mt={8}>
