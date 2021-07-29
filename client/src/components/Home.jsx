@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useState } from 'react';
+import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 // function Copyright(props) {
 //     return (
@@ -47,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function Home(props) {
+function Home(props) {
     const classes = useStyles();
     //STATE ONE
     const [username, setUsername]=useState('')
@@ -79,20 +81,14 @@ export default function Home(props) {
 
     const handleResponse = (resp) => {
       if(resp.token){
-        setUsername({
-          username: resp.user.username
-        })
-        setPassword({
-          password: resp.user.password
-        })
-        setToken({
-          token: resp.token
-        })
+        localStorage.token = resp.token
+        props.setUser(resp)
         props.history.push("/periods")
       }
           else {
               alert("Messed up")
           }
+      console.log(resp)
       }
   
   
@@ -106,6 +102,8 @@ export default function Home(props) {
 
     console.log(username)
     console.log(password)
+    console.log(token)
+    console.log(props)
     return (
 <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -178,3 +176,16 @@ export default function Home(props) {
     </Container>
     )
 }
+
+
+
+let mapStateToProps = (globalState) => {
+  let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
+  return {
+    token: globalState.userInfo.token,
+    username: globalState.userInfo.username
+  }
+}
+
+
+export default connect(mapStateToProps)(withRouter(Home))

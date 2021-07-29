@@ -9,6 +9,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 
+// import userReducer from './redux/userReducer';
+
 const initialPeriodState = {
   periods: []
 }
@@ -77,6 +79,26 @@ const currentCompositionReducer = (state = initialCurrentCompositionState, actio
   }
 }
 
+const initialUserState = {
+  username: "",
+  token: ""
+}
+
+const userReducer = (state = initialUserState, action) => {
+  switch (action.type) {
+    case "SET_USER":
+    return {
+      ...state,
+      ...action.payload.user,
+      token: action.payload.token
+
+    }
+    default:
+      return state
+  }
+
+}
+
 //CombineReducers take in a POJO as an argument
   //The keys of that POJO become the highest keys of global state
     //The values of that POJO are the state objects being returned by the reducer
@@ -85,6 +107,7 @@ let rootReducer = combineReducers({
   composerInfo: composerReducer,
   compositionInfo: compositionReducer,
   currentCompositionInfo: currentCompositionReducer,
+  userInfo: userReducer
 })
 
 let store = createStore(

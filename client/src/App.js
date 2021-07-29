@@ -38,6 +38,41 @@ function App(props) {
 
   }, [])
 
+  /////STAY LOGGED IN ON REFRESH////////
+
+  // useEffect(() => {
+  //   if(localStorage.token){
+  //   fetch("http://localhost:3000/me", {
+  //       headers: {
+  //         "authorization": localStorage.token
+  //       }
+  //     })
+  //       .then(res => res.json())
+  //       .then((res) => this.handleResponse)
+  //   });
+
+  // }, [])
+
+
+  /////LOGOUT/////
+
+  // logOut = () => {
+  //   this.setState({
+  //     username: "",
+  //     pantries: [],
+  //     token: "",
+  //     id: 0
+  //   })
+  //   localStorage.clear()
+
+  // }
+    
+
+      
+
+    
+  
+
     // console.log(props)
     
 
@@ -101,6 +136,13 @@ function App(props) {
     return <Register />
   }
 
+  const renderHome = (routerProps) => {
+    return <Home 
+    history={props.history}
+    setUser={props.setUser}
+    />
+  }
+
   // console.log(props)
   return (
 
@@ -113,7 +155,7 @@ function App(props) {
       <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />
       <Route exact path="/composition" render={renderCompositions} />
       <Route exact path="/periods/:period_name/composers/:composer_name/compositions" render={renderComposerCompositions} />
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" render={renderHome} />
     </Switch>
 
     </div>
@@ -150,6 +192,19 @@ let setCurrentComposition = (currentComposition) => {
   }
 }
 
+let setUser = (responseFromServer) => {
+  return {
+    type: "SET_USER",
+    payload: responseFromServer
+  }
+}
+
+let logout = () => {
+  return {
+    type: "LOGOUT_USER"
+  }
+}
+
 let mapStateToProps = (globalState) => {
   // let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
   return {
@@ -165,7 +220,9 @@ let mapDispatchToProps = {
   setPeriods,
   setComposers,
   setCompositions,
-  setCurrentComposition
+  setCurrentComposition,
+  setUser,
+  logout
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
