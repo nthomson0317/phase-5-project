@@ -49,10 +49,13 @@ function ComposersContainer(props) {
 
     console.log(props)
 
-    let filteredComposers = props.composers.filter((composer)=> {
-       return (composer.period.id == props.period.id)
-    })
-    console.log(filteredComposers)
+    // let filteredComposers = props.composers.filter((composer)=> {
+    //    return (composer.period.id == props.period.id)
+    // })
+    // console.log(filteredComposers)
+
+    let filteredComposers = props.period.composers
+    // console.log(props.composers)
 
     
     return (

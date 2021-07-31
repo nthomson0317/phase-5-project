@@ -889,18 +889,15 @@ def schumann_compositions
 schumann_compositions
 
 Composition.all.each do |composition| 
-    # sleep 4
     begin
     RSpotify.authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
         tracks = RSpotify::Track.search(composition[:name])
         track = tracks.first
-        # byebug
     rescue NoMethodError => e
         
     else
         id = track.instance_variable_get('@id')
         composition.update(spotify_id: id)
-        # byebug
     end
 end
 

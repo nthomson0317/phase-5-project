@@ -15,6 +15,9 @@ import Container from '@material-ui/core/Container';
 import {useState } from 'react';
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
+import Card from '@material-ui/core/Card';
+import header from '../images/Orchid_header.jpg'
+
 
 // function Copyright(props) {
 //     return (
@@ -105,9 +108,16 @@ function Home(props) {
     console.log(token)
     console.log(props)
     return (
+      <div>
+          <Card>
+<img src={header}/>
+</Card>
+      
 <Container component="main" maxWidth="xs">
+
       <CssBaseline />
       <div className={classes.paper}>
+        
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -174,6 +184,7 @@ function Home(props) {
         {/* <Copyright /> */}
       </Box>
     </Container>
+    </div>
     )
 }
 

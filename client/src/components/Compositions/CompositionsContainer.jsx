@@ -41,8 +41,15 @@ const useStyles = makeStyles((theme) => ({
   // };
 
 // console.log(props.currentComposition.composition)
-console.log(props.currentComposition)
-console.log(toggled)
+
+
+
+    //use string to find match in global state.
+    // let composer = props.period.composers.find(composer => composer.name == name)
+console.log(props)
+
+
+// props.period.composer.compositions
 
 const handleClick = () => {
   setToggled(!toggled)
@@ -60,7 +67,7 @@ const handleClick = () => {
           {toggled ?  <CompositionPlayer /> :  null}
           </div>
     <List className={classes.root}>
-      {props.compositions.map((value) => {
+      {props.composer.compositions.map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (

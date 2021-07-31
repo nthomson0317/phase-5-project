@@ -40,6 +40,7 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
       const handleClick = (value) => {
         console.log(value.target.innerHTML)
         console.log(value)
+        
     
         fetch(`http://localhost:3000/compositions/${props.value.id}`, {
             })
@@ -52,6 +53,7 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
     
 
       }
+      
       console.log(props)
       console.log(props.value)
       console.log(props.currentComposition)

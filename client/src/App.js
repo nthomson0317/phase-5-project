@@ -88,6 +88,7 @@ function App(props) {
 
   let renderPeriodComposers = (routerProps) => {
     let name = routerProps.match.params.period_name
+    console.log(routerProps)
 
     //use string to find match in global state.
     let period = props.periods.find(period => period.name == name)
@@ -95,6 +96,7 @@ function App(props) {
       //if found render component
       if (period){
       return <ComposersContainer
+      composer={routerProps.match.params.composer_name}
       history={props.history}
       period={period}
       />
@@ -110,27 +112,26 @@ function App(props) {
   }
 
   let renderComposerCompositions = (routerProps) => {
+    let name = routerProps.match.params.composer_name
+    console.log(props)
     console.log(routerProps)
-    let composer = routerProps.match.params.composer_name
 
-    //use string to find match in global state.
-    let compositions = props.compositions.filter(composition => composition.composer.name == composer)
+    let composer = props.periods[3].composers.find(composer => composer.name == name)
+    console.log(composer)
+    
     // console.log(compositions)
-
-
-
       //if found render component
-      if (compositions){
+      // if (compositions){
       return <CompositionsContainer
       history={props.history}
-      compositions={compositions}
+      // compositions={compositions}
       composer={composer}
       setCurrentComposition={props.setCurrentComposition}/>
     }
-    else {
-      return <Redirect to="/" />
-    } 
-  }
+  //   else {
+  //     return <Redirect to="/" />
+  //   } 
+  // }
 
   const renderRegistrationForm = (routerProps) => {
     return <Register />
