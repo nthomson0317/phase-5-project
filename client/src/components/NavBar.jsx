@@ -30,6 +30,16 @@ const [state, setState] = React.useState({
   right: false,
 });
 
+const handleHomeClick = (e) => {
+
+    props.history.push(`/`);
+  }
+
+  const handleRegisterClick = (e) => {
+
+    props.history.push(`/register`);
+  }
+
 const toggleDrawer = (anchor, open) => (event) => {
   if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
     return;
@@ -53,12 +63,15 @@ const list = (anchor) => (
       <br></br>
       <Divider/>
     <List>
-      {['Home', 'Login', 'Register', 'Playlists'].map((text, index) => (
-        <ListItem button key={text}>
-          <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-          <ListItemText primary={text} />
+        <ListItem button 
+        onClick={handleHomeClick}>Home
         </ListItem>
-      ))}
+        <ListItem button 
+        onClick={handleRegisterClick}>Register
+        </ListItem>
+        <ListItem button >Playlists
+        </ListItem>
+      
     </List>
 
   </div>

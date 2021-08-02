@@ -61,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
     
     return (
         <div>
-        <NavBar/>
+        <NavBar
+        history={props.history}/>
       <React.Fragment>
       <CssBaseline />
       {/* <AppBar position="relative"> */}

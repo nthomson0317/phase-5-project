@@ -12,6 +12,7 @@ import Composition from './Composition'
 import {connect} from 'react-redux'
 import Button from '@material-ui/core/Button';
 import CompositionPlayer from './CompositionPlayer'
+import NavBar from '../NavBar'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -59,6 +60,8 @@ const handleClick = () => {
 
     return (
         <div>
+          <NavBar
+        history={props.history}/>
            <Button variant="outlined" color="secondary"
            onClick={handleClick}>
         Play Composition

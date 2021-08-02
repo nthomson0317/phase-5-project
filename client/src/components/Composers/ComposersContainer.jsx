@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import NavBar from '../NavBar'
 
 //REDUX
 import { connect } from 'react-redux'
@@ -60,7 +61,8 @@ function ComposersContainer(props) {
     
     return (
         <div>
-
+        <NavBar
+        history={props.history}/>
         <React.Fragment>
         <CssBaseline />
         {/* <AppBar position="relative"> */}
