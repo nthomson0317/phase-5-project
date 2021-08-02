@@ -148,7 +148,6 @@ function App(props) {
   return (
 
     <div>
-    <NavBar/>
     <Switch>
       <Route path="/register" render={ renderRegistrationForm } />
       <Route exact path="/periods" render={renderPeriods} />

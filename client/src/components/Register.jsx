@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useState } from 'react';
+import header from '../images/Orchid_header.jpg'
+import Card from '@material-ui/core/Card';
 
 // function Copyright(props) {
 //     return (
@@ -95,6 +97,10 @@ export default function Register(props) {
     console.log(username)
     console.log(password)
     return (
+      <div>
+      <Card>
+      <img src={header}/>
+      </Card>
 <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -164,5 +170,6 @@ export default function Register(props) {
         {/* <Copyright /> */}
       </Box>
     </Container>
+    </div>
     )
 }

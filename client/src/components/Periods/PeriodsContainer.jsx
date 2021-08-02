@@ -6,6 +6,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import header from '../../images/orchid_logo_square.jpg'
+import NavBar from '../NavBar'
 
 
 
@@ -56,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     
     return (
         <div>
-
+        <NavBar/>
       <React.Fragment>
       <CssBaseline />
       {/* <AppBar position="relative"> */}
@@ -118,7 +123,6 @@ const useStyles = makeStyles((theme) => ({
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           Something here to give the footer a purpose!
         </Typography>
-        
       </footer>
       {/* End footer */}
     </React.Fragment>
