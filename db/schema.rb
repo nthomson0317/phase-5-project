@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_175942) do
+ActiveRecord::Schema.define(version: 2021_08_02_214452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,23 @@ ActiveRecord::Schema.define(version: 2021_07_27_175942) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "playlist_compositions", force: :cascade do |t|
+    t.bigint "playlist_id", null: false
+    t.bigint "composition_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["composition_id"], name: "index_playlist_compositions_on_composition_id"
+    t.index ["playlist_id"], name: "index_playlist_compositions_on_playlist_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -56,4 +73,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_175942) do
 
   add_foreign_key "composers", "periods"
   add_foreign_key "compositions", "composers"
+  add_foreign_key "playlist_compositions", "compositions"
+  add_foreign_key "playlist_compositions", "playlists"
+  add_foreign_key "playlists", "users"
 end

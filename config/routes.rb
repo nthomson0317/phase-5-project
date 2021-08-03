@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :playlist_compositions
+  resources :playlists
   resources :users
   resources :compositions
   resources :composers

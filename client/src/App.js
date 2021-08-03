@@ -8,6 +8,7 @@ import ComposersContainer from './components/Composers/ComposersContainer'
 import Composition from './components/Compositions/Composition'
 import CompositionsContainer from './components/Compositions/CompositionsContainer'
 import Register from './components/Register'
+import PlaylistContainer from './components/Playlist/PlaylistContainer'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -22,21 +23,21 @@ function App(props) {
 
   }, [])
 
-  useEffect(() => {
-    fetch("http://localhost:3000/composers")
-  .then((r) => r.json())
-  .then((composersArray) => {(props.setComposers(composersArray))
-    });
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/composers")
+  // .then((r) => r.json())
+  // .then((composersArray) => {(props.setComposers(composersArray))
+  //   });
 
-  }, [])
+  // }, [])
 
-  useEffect(() => {
-    fetch("http://localhost:3000/compositions")
-  .then((r) => r.json())
-  .then((compositionsArray) => {(props.setCompositions(compositionsArray))
-    });
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/compositions")
+  // .then((r) => r.json())
+  // .then((compositionsArray) => {(props.setCompositions(compositionsArray))
+  //   });
 
-  }, [])
+  // }, [])
 
   /////STAY LOGGED IN ON REFRESH////////
 
@@ -137,12 +138,20 @@ function App(props) {
     return <Register />
   }
 
+  const renderPlaylist = (routerProps) => {
+    return <PlaylistContainer 
+    history={props.history}
+    setCurrentComposition={props.setCurrentComposition}/>
+  }
+
   const renderHome = (routerProps) => {
     return <Home 
     history={props.history}
     setUser={props.setUser}
     />
   }
+
+
 
   // console.log(props)
   return (
@@ -155,6 +164,7 @@ function App(props) {
       <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />
       <Route exact path="/composition" render={renderCompositions} />
       <Route exact path="/periods/:period_name/composers/:composer_name/compositions" render={renderComposerCompositions} />
+      <Route path = "/playlist" render={renderPlaylist}/>
       <Route exact path="/" render={renderHome} />
     </Switch>
 

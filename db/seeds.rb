@@ -903,11 +903,10 @@ end
 
     # Composition.where(spotify_id: nil).destroy_all
 
+####################################################################USERS#####################################
+User.create(username: 'ntntnt', password: 'abc123')
+
+####################################################################PLAYLISTS#####################################
 
 
-
-
-        # comp = Composition.find_by(id: composition_params[:id])
-
-
-        # composition.composer.name  + ' ' + 
+Playlist.create(name: 'Schumann Playlist', user_id: 1)

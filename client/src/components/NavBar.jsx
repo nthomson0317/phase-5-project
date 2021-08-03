@@ -31,13 +31,15 @@ const [state, setState] = React.useState({
 });
 
 const handleHomeClick = (e) => {
-
     props.history.push(`/`);
   }
 
   const handleRegisterClick = (e) => {
-
     props.history.push(`/register`);
+  }
+
+  const handlePlaylistClick = (e) => {
+    props.history.push("/playlist")
   }
 
 const toggleDrawer = (anchor, open) => (event) => {
@@ -69,7 +71,8 @@ const list = (anchor) => (
         <ListItem button 
         onClick={handleRegisterClick}>Register
         </ListItem>
-        <ListItem button >Playlists
+        <ListItem button 
+        onClick={handlePlaylistClick}>Playlist
         </ListItem>
       
     </List>

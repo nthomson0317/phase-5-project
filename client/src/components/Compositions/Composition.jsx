@@ -10,17 +10,22 @@ import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
 import {connect} from 'react-redux'
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import Button from '@material-ui/core/Button';
 
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+////////////////////////////////////////////////////////////////FUNCTION/////////////////////////////////////
 
  function Composition(props) {
 
-    const useStyles = makeStyles((theme) => ({
-        root: {
-          width: '100%',
-          maxWidth: 360,
-          backgroundColor: theme.palette.background.paper,
-        },
-      }));
+
       const classes = useStyles();
       const [checked, setChecked] = React.useState([0]);
     
@@ -46,11 +51,27 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
             })
             .then(res => res.json())
             .then((res) => props.setCurrentComposition(res.id))
-            // .then return (checked.length > 2 ? 
-            //     <iframe src={`https://open.spotify.com/embed/track/${res.id}`} width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe> : nill)
+      }
 
-    
-    
+      const handleAddToPlaylist = (value) => {
+        console.log(props.value)
+        fetch("http://localhost:3000/playlist_compositions", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+              "authorization": props.userToken
+            },
+                body: JSON.stringify({
+                composition_id: props.value.id
+              })
+              })
+      .then(res => res.json())
+      .then((res) => console.log(res))
+
+        //1. send a composition to playlist compositions?
+        //2. in the back end, playlist has playlist compositions.
+        //3. in playlist component, pull up playlists for user, which pulls up playlist compositions?
+
 
       }
       
@@ -78,6 +99,11 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
             <ListItemText id={props.labelId} primary={`${props.value.genre}`} />
             </ListItemSecondaryAction>
           </ListItem>
+          <Button variant="outlined" 
+          color="primary"
+          onClick={handleAddToPlaylist}>
+        Add to Playlist
+            </Button>
 
 
             
@@ -86,7 +112,8 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 }
 let mapStateToProps = (globalState) => {
     return {
-        currentComposition: globalState.currentCompositionInfo.currentComposition
+        currentComposition: globalState.currentCompositionInfo.currentComposition,
+        userToken: globalState.userInfo.token
     }
   }
   export default withRouter(connect(mapStateToProps)(Composition)) 
