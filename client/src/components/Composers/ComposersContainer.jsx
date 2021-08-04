@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import NavBar from '../NavBar'
+import Card from '@material-ui/core/Card';
+import header from '../../images/Orchid_header.jpg'
 
 //REDUX
 import { connect } from 'react-redux'
@@ -61,6 +63,9 @@ function ComposersContainer(props) {
     
     return (
         <div>
+                      <Card>
+<img src={header}/>
+</Card>
         <NavBar
         history={props.history}/>
         <React.Fragment>
@@ -81,9 +86,8 @@ function ComposersContainer(props) {
                 {props.period.name} Composers
               </Typography>
               <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Something short and leading about the collection below—its contents, the creator, etc.
-                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                entirely.
+              Passions ran high in the Romantic era; drama, expression, poetry and tall tales were the order of the day. 
+              The shining marble columns of the Classical era began to dull, crack even, as composers just wanted to loosen their collars.
               </Typography>
               {/* <div className={classes.heroButtons}>
                 <Grid container spacing={2} justifyContent="center">

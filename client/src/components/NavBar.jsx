@@ -59,9 +59,9 @@ const list = (anchor) => (
     onClick={toggleDrawer(anchor, false)}
     onKeyDown={toggleDrawer(anchor, false)}
   >
+    <br></br>
       <img src={header}
       id="logo"></img>
-      <br></br>
       <br></br>
       <Divider/>
     <List>

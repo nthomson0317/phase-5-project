@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import header from '../../images/orchid_logo_square.jpg'
+import header from '../../images/Orchid_header.jpg'
 import NavBar from '../NavBar'
 
 
@@ -61,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
     
     return (
         <div>
+            <Card>
+<img src={header}/>
+</Card>
         <NavBar
         history={props.history}/>
       <React.Fragment>
@@ -81,9 +84,8 @@ const useStyles = makeStyles((theme) => ({
               Periods
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+            Classical music can largely be categorized by six main periods, each with their own stylistic characteristics, innovations, offshoot movements and stars. 
+            As with all categorizations, these are merely approximations, and thus are only intended to ease the newcomer's navigation of the genre. 
             </Typography>
             {/* <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">

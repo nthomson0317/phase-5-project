@@ -15,6 +15,8 @@ import PlaylistPlayer from './PlaylistPlayer'
 import NavBar from '../NavBar'
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import header from '../../images/Orchid_header.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,16 +38,22 @@ function PlaylistContainer(props) {
     console.log(props)
     return (
         <div>
+                                <Card>
+<img src={header}/>
+</Card>
             <Typography gutterBottom variant="h1" component="h2">
               {props.username}'s {props.playlist.name}
             </Typography>
             <div>
           <NavBar
         history={props.history}/>
+        <br></br>
            <Button variant="outlined" color="secondary"
            onClick={handleClick}>
         Play Composition
       </Button>
+      <br></br>
+      <br></br>
       <div>
           {toggled ?  <PlaylistPlayer /> :  null}
           </div>
