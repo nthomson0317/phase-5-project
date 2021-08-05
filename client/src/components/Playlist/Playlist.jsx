@@ -48,47 +48,67 @@ const useStyles = makeStyles((theme) => ({
       const handleClick = () => {
           props.setCurrentComposition(props.comp.composition.spotify_id)
         console.log(props.comp.composition.spotify_id)
+        console.log(props.comp.composition)
       }
 
 
       ////DELETE FROM PLAYLIST/////
       const handleDeleteCompositionFromPlaylist = () => {
-      // const deleteOpeningFromState = (deletedId) => {
-      //   let copyOfOpenings = currentUser.openings.filter((openingObj) => {
-      //     return openingObj.id !== deletedId
-      console.log('delete')
+      fetch(`http://localhost:3000/playlist_compositions/${props.comp.id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-type": "application/json",
+              "authorization": props.userToken
+            },
+            })
+      .then(res => res.json())
+      .then((res) => deleteCompositionFromPlaylistState(res))
 
-
-
-      // fetch("http://localhost:3000/playlist_compositions", {
-      //       method: "POST",
-      //       headers: {
-      //         "Content-type": "application/json",
-      //         "authorization": props.userToken
-      //       },
-      //           body: JSON.stringify({
-      //           composition_id: props.value.id
-      //         })
-      //         })
-      // .then(res => res.json())
-      // .then((res) => console.log(res))
-
-    //   setCurrentUser({
-    //     id: currentUser.id,
-    //     username: currentUser.username,
-    //     name: currentUser.name,
-    //     rating: currentUser.rating,
-    //     age: currentUser.age,
-    //     profile_pic: currentUser.profile_pic,
-    //     country: currentUser.country,
-    //     token: currentUser.token,
-    //     openings: copyOfOpenings,
-    //     games: currentUser.games
-    //    })
-    //    console.log(currentUser.openings)
-    // }
         }
 
+
+        const deleteCompositionFromPlaylistState = (res) => {
+          let copyOfPlaylistComps = props.playlist.playlist_compositions.filter((compObj) => {
+            return compObj.id !== res.id
+          })
+          let playlists = [{...props.playlist, playlist_compositions: copyOfPlaylistComps}]
+          props.setUser({user:{
+            username: props.currentUser.username,
+            id: props.currentUser.id,
+            playlists: playlists
+          },
+          token: props.currentUser.token})
+        }
+
+
+        // const handleClick = (value) => {
+        //   console.log(value.target.innerHTML)
+        //   console.log(value)
+          
+      
+        //   fetch(`http://localhost:3000/compositions/${props.value.id}`, {
+        //       })
+        //       .then(res => res.json())
+        //       .then((res) => props.setCurrentComposition(res.id))
+        // }
+  
+        // const handleAddToPlaylist = (value) => {
+        //   // console.log(props.value)
+        //   fetch("http://localhost:3000/playlist_compositions", {
+        //       method: "POST",
+        //       headers: {
+        //         "Content-type": "application/json",
+        //         "authorization": props.userToken
+        //       },
+        //           body: JSON.stringify({
+        //           composition_id: props.value.id
+        //         })
+        //         })
+        // .then(res => res.json())
+        // .then((res) => addCompositionToPlaylistState(res))
+        // }
+  
+        
       
 
 
@@ -136,7 +156,9 @@ const useStyles = makeStyles((theme) => ({
 let mapStateToProps = (globalState) => {
     return {
         currentComposition: globalState.currentCompositionInfo.currentComposition,
-        userToken: globalState.userInfo.token
+        userToken: globalState.userInfo.token,
+        playlist: globalState.userInfo.playlists[0],
+        currentUser: globalState.userInfo
     }
   }
 

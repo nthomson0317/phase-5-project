@@ -1,6 +1,6 @@
 class PlaylistCompositionsController < ApplicationController
 
-    before_action :authorized, only: [:create]
+    before_action :authorized, only: [:create, :destroy]
 
     def index
         playlistCompositions = PlaylistComposition.all
@@ -13,10 +13,16 @@ class PlaylistCompositionsController < ApplicationController
         render json: playlistComposition
     end
 
+    def destroy
+        playlistComposition = @user.playlist_compositions.find(params[:id])
+        playlistComposition.destroy
+        render json: playlistComposition
+    end
+
     private
 
     def playlist_composition_params
-        params.permit(:composition_id)
+        params.permit(:id)
     end
 
 end
