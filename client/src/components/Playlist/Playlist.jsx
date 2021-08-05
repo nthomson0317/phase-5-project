@@ -10,6 +10,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 360,
       backgroundColor: theme.palette.background.paper,
     },
+
+      button: {
+        margin: theme.spacing(1),
+      },
   }));
 
 
@@ -44,6 +49,50 @@ const useStyles = makeStyles((theme) => ({
           props.setCurrentComposition(props.comp.composition.spotify_id)
         console.log(props.comp.composition.spotify_id)
       }
+
+
+      ////DELETE FROM PLAYLIST/////
+      const handleDeleteCompositionFromPlaylist = () => {
+      // const deleteOpeningFromState = (deletedId) => {
+      //   let copyOfOpenings = currentUser.openings.filter((openingObj) => {
+      //     return openingObj.id !== deletedId
+      console.log('delete')
+
+
+
+      // fetch("http://localhost:3000/playlist_compositions", {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-type": "application/json",
+      //         "authorization": props.userToken
+      //       },
+      //           body: JSON.stringify({
+      //           composition_id: props.value.id
+      //         })
+      //         })
+      // .then(res => res.json())
+      // .then((res) => console.log(res))
+
+    //   setCurrentUser({
+    //     id: currentUser.id,
+    //     username: currentUser.username,
+    //     name: currentUser.name,
+    //     rating: currentUser.rating,
+    //     age: currentUser.age,
+    //     profile_pic: currentUser.profile_pic,
+    //     country: currentUser.country,
+    //     token: currentUser.token,
+    //     openings: copyOfOpenings,
+    //     games: currentUser.games
+    //    })
+    //    console.log(currentUser.openings)
+    // }
+        }
+
+      
+
+
+
       console.log(props)
       console.log(props.currentComposition)
     return (
@@ -66,7 +115,17 @@ const useStyles = makeStyles((theme) => ({
         <ListItemSecondaryAction>
         <ListItemText id={props.labelId} primary={`${props.comp.composition.genre}`} />
         </ListItemSecondaryAction>
+        
       </ListItem>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={handleDeleteCompositionFromPlaylist}
+        startIcon={<DeleteIcon />}
+      >
+        Delete
+      </Button>
 
 
         

@@ -79,12 +79,14 @@ function App(props) {
 
   let renderPeriods = (routerProps) => {
     return <PeriodsContainer 
-    history={props.history}/>
+    history={props.history}
+    logout={props.logout}/>
   }
 
   let renderComposers = (routerProps) => {
     return <ComposersContainer
-    history={props.history}/>
+    history={props.history}
+    logout={props.logout}/>
   }
 
   let renderPeriodComposers = (routerProps) => {
@@ -100,6 +102,7 @@ function App(props) {
       composer={routerProps.match.params.composer_name}
       history={props.history}
       period={period}
+      logout={props.logout}
       />
     }
     else {
@@ -109,6 +112,8 @@ function App(props) {
 
   let renderCompositions = (routerProps) => {
     return <Composition 
+    logout={props.logout}
+    setUser={props.setUser}
     />
   }
 
@@ -127,7 +132,8 @@ function App(props) {
       history={props.history}
       // compositions={compositions}
       composer={composer}
-      setCurrentComposition={props.setCurrentComposition}/>
+      setCurrentComposition={props.setCurrentComposition}
+      setUser={props.setUser}/>
     }
   //   else {
   //     return <Redirect to="/" />
@@ -141,13 +147,15 @@ function App(props) {
   const renderPlaylist = (routerProps) => {
     return <PlaylistContainer 
     history={props.history}
-    setCurrentComposition={props.setCurrentComposition}/>
+    setCurrentComposition={props.setCurrentComposition}
+    setUser={props.setUser}/>
   }
 
   const renderHome = (routerProps) => {
     return <Home 
     history={props.history}
     setUser={props.setUser}
+    logOut={props.logOut}
     />
   }
 

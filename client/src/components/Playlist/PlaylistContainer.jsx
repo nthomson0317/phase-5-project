@@ -65,7 +65,8 @@ function PlaylistContainer(props) {
           <Playlist
           labelId={labelId}
           comp={comp}
-          setCurrentComposition={props.setCurrentComposition}/>
+          setCurrentComposition={props.setCurrentComposition}
+          setUser={props.setUser}/>
 
         );
       })}

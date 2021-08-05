@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
       }
 
       const handleAddToPlaylist = (value) => {
-        console.log(props.value)
+        // console.log(props.value)
         fetch("http://localhost:3000/playlist_compositions", {
             method: "POST",
             headers: {
@@ -66,13 +66,18 @@ const useStyles = makeStyles((theme) => ({
               })
               })
       .then(res => res.json())
-      .then((res) => console.log(res))
+      .then((res) => addCompositionToPlaylistState(res))
+      }
 
-        //1. send a composition to playlist compositions?
-        //2. in the back end, playlist has playlist compositions.
-        //3. in playlist component, pull up playlists for user, which pulls up playlist compositions?
-
-
+      const addCompositionToPlaylistState = (res) => {
+        let copyOfPlaylistCompositions= [...props.playlist.playlist_compositions, res]
+        let playlists = [{...props.playlist, playlist_compositions: copyOfPlaylistCompositions}]
+        props.setUser({user:{
+          username: props.currentUser.username,
+          id: props.currentUser.id,
+          playlists: playlists
+        },
+        token: props.currentUser.token})
       }
       
       console.log(props)
@@ -113,7 +118,9 @@ const useStyles = makeStyles((theme) => ({
 let mapStateToProps = (globalState) => {
     return {
         currentComposition: globalState.currentCompositionInfo.currentComposition,
-        userToken: globalState.userInfo.token
+        userToken: globalState.userInfo.token,
+        playlist: globalState.userInfo.playlists[0],
+        currentUser: globalState.userInfo
     }
   }
   export default withRouter(connect(mapStateToProps)(Composition)) 

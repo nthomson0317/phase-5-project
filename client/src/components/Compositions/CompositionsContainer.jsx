@@ -92,7 +92,8 @@ const handleClick = () => {
           <Composition
           labelId={labelId}
           value={value}
-          setCurrentComposition={props.setCurrentComposition}/>
+          setCurrentComposition={props.setCurrentComposition}
+          setUser={props.setUser}/>
 
         );
       })}

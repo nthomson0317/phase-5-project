@@ -89,7 +89,7 @@ function Home(props) {
         props.history.push("/periods")
       }
           else {
-              alert("Messed up")
+              alert("Incorrect username or password")
           }
       console.log(resp)
       }

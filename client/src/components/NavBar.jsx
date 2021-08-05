@@ -74,6 +74,9 @@ const list = (anchor) => (
         <ListItem button 
         onClick={handlePlaylistClick}>Playlist
         </ListItem>
+        <ListItem button 
+        onClick={props.logout}>Logout
+        </ListItem>
       
     </List>
 
