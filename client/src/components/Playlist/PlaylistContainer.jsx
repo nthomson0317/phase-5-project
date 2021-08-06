@@ -41,7 +41,7 @@ function PlaylistContainer(props) {
                                 <Card>
 <img src={header}/>
 </Card>
-            <Typography gutterBottom variant="h1" component="h2">
+            <Typography gutterBottom variant="h1" component="h2" align="center">
               {props.username}'s {props.playlist.name}
             </Typography>
             <div>
@@ -57,7 +57,7 @@ function PlaylistContainer(props) {
       <div>
           {toggled ?  <PlaylistPlayer /> :  null}
           </div>
-    <List className={classes.root}>
+    <List className={classes.root} >
       {props.playlist.playlist_compositions.map((comp) => {
         const labelId = `checkbox-list-label-${comp}`;
 
