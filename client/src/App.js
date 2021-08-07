@@ -1,8 +1,7 @@
-import {useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import './App.css';
 //COMPONENTS
 import Home from './components/Home'
-import NavBar from './components/NavBar'
 import PeriodsContainer from './components/Periods/PeriodsContainer'
 import ComposersContainer from './components/Composers/ComposersContainer'
 import Composition from './components/Compositions/Composition'
@@ -20,62 +19,7 @@ function App(props) {
   .then((r) => r.json())
   .then((periodsArray) => {(props.setPeriods(periodsArray))
     });
-
   }, [])
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/composers")
-  // .then((r) => r.json())
-  // .then((composersArray) => {(props.setComposers(composersArray))
-  //   });
-
-  // }, [])
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/compositions")
-  // .then((r) => r.json())
-  // .then((compositionsArray) => {(props.setCompositions(compositionsArray))
-  //   });
-
-  // }, [])
-
-  /////STAY LOGGED IN ON REFRESH////////
-
-  // useEffect(() => {
-  //   if(localStorage.token){
-  //   fetch("http://localhost:3000/me", {
-  //       headers: {
-  //         "authorization": localStorage.token
-  //       }
-  //     })
-  //       .then(res => res.json())
-  //       .then((res) => this.handleResponse)
-  //   });
-
-  // }, [])
-
-
-  /////LOGOUT/////
-
-  // logOut = () => {
-  //   this.setState({
-  //     username: "",
-  //     pantries: [],
-  //     token: "",
-  //     id: 0
-  //   })
-  //   localStorage.clear()
-
-  // }
-    
-
-      
-
-    
-  
-
-    // console.log(props)
-    
 
   let renderPeriods = (routerProps) => {
     return <PeriodsContainer 
@@ -119,26 +63,16 @@ function App(props) {
 
   let renderComposerCompositions = (routerProps) => {
     let name = routerProps.match.params.composer_name
-    console.log(props)
-    console.log(routerProps)
 
     let composer = props.periods[3].composers.find(composer => composer.name == name)
     console.log(composer)
     
-    // console.log(compositions)
-      //if found render component
-      // if (compositions){
       return <CompositionsContainer
       history={props.history}
-      // compositions={compositions}
       composer={composer}
       setCurrentComposition={props.setCurrentComposition}
       setUser={props.setUser}/>
     }
-  //   else {
-  //     return <Redirect to="/" />
-  //   } 
-  // }
 
   const renderRegistrationForm = (routerProps) => {
     return <Register />
@@ -159,9 +93,6 @@ function App(props) {
     />
   }
 
-
-
-  // console.log(props)
   return (
 
     <div>
@@ -229,7 +160,6 @@ let mapStateToProps = (globalState) => {
     periods: globalState.periodInfo.periods,
     composers: globalState.composerInfo.composers,
     compositions: globalState.compositionInfo.compositions
-    // currentComposition: globalState.currentComposition.composition
   }
 }
 
