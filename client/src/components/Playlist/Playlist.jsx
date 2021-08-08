@@ -1,9 +1,7 @@
 import React from 'react'
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -12,9 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-
 const useStyles = makeStyles((theme) => ({
-
     root: {
       width: '100%',
       maxWidth: 360,
@@ -25,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
       },
   }));
-
-
 
  function Playlist(props) {
     const classes = useStyles();
@@ -47,8 +41,6 @@ const useStyles = makeStyles((theme) => ({
 
       const handleClick = () => {
           props.setCurrentComposition(props.comp.composition.spotify_id)
-        console.log(props.comp.composition.spotify_id)
-        console.log(props.comp.composition)
       }
 
 
@@ -81,40 +73,6 @@ const useStyles = makeStyles((theme) => ({
         }
 
 
-        // const handleClick = (value) => {
-        //   console.log(value.target.innerHTML)
-        //   console.log(value)
-          
-      
-        //   fetch(`http://localhost:3000/compositions/${props.value.id}`, {
-        //       })
-        //       .then(res => res.json())
-        //       .then((res) => props.setCurrentComposition(res.id))
-        // }
-  
-        // const handleAddToPlaylist = (value) => {
-        //   // console.log(props.value)
-        //   fetch("http://localhost:3000/playlist_compositions", {
-        //       method: "POST",
-        //       headers: {
-        //         "Content-type": "application/json",
-        //         "authorization": props.userToken
-        //       },
-        //           body: JSON.stringify({
-        //           composition_id: props.value.id
-        //         })
-        //         })
-        // .then(res => res.json())
-        // .then((res) => addCompositionToPlaylistState(res))
-        // }
-  
-        
-      
-
-
-
-      console.log(props)
-      console.log(props.currentComposition)
     return (
         <div>
         <ListItem key={props.comp.id} role={undefined} dense button onClick={handleToggle(props.comp)}>
@@ -147,8 +105,6 @@ const useStyles = makeStyles((theme) => ({
         Delete
       </Button>
 
-
-        
     </div>
     )
 }

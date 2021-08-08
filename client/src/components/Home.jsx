@@ -13,24 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useState } from 'react';
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import header from '../images/Orchid_header.jpg'
-
-
-// function Copyright(props) {
-//     return (
-//       <Typography variant="body2" color="textSecondary" align="center">
-//         {'Copyright © '}
-//         <Link color="inherit" href="https://material-ui.com/">
-//           Classify
-//         </Link>{' '}
-//         {new Date().getFullYear()}
-//         {'.'}
-//       </Typography>
-//     );
-//   }
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -67,16 +53,15 @@ function Home(props) {
       let formData = { 
         username: username,    
         password: password,}      
-        // props.handleSubmit(formData)
         console.log("Login form has been submitted")
         
         fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
-  },
+            },
             body: JSON.stringify(formData),
-})
+        })
                 .then((r) => r.json())
                 .then((r) => handleResponse(r));
 
@@ -103,20 +88,16 @@ function Home(props) {
       setPassword(e.target.value)
     }
 
-    console.log(username)
-    console.log(password)
-    console.log(token)
-    console.log(props)
     return (
       <div>
-          <Card>
-<img src={header}/>
-</Card>
+        <Card>
+          <img src={header}/>
+        </Card>
       
-<Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs">
 
-      <CssBaseline />
-      <div className={classes.paper}>
+         <CssBaseline />
+            <div className={classes.paper}>
         
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -181,7 +162,6 @@ function Home(props) {
         </form>
       </div>
       <Box mt={8}>
-        {/* <Copyright /> */}
       </Box>
     </Container>
     </div>

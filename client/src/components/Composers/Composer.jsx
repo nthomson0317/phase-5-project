@@ -7,8 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import {useState } from 'react';
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import {withRouter} from 'react-router-dom'
+
 
 //REDUX
 import { connect } from 'react-redux'
@@ -50,8 +50,6 @@ const useStyles = makeStyles((theme) => ({
 
  function Composer(props) {
 
-
-
     const classes = useStyles();
 
     const [state, setState] = useState({
@@ -59,16 +57,10 @@ const useStyles = makeStyles((theme) => ({
         shadow:1,
       })
 
-      const handleClick = (e) => {
-        console.log(props)
-        
-        props.history.push(`${props.history.location.pathname}/${props.composer.name}/compositions`);
+    const handleClick = (e) => {
+      props.history.push(`${props.history.location.pathname}/${props.composer.name}/compositions`);
       }
 
-      
-      // console.log(props)
-      // console.log(props.composer.name)
-      // console.log(props.history)
     return (
         <Card className={classes.card}
         classes={{root: state.raised ? classes.cardHovered : ""}}
@@ -76,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
         onMouseOut={()=>setState({ raised:false, shadow:1 })} 
         raised={state.raised} zdepth={state.shadow}
         onClick={handleClick}
-             
         >
           <CardMedia
             className={classes.cardMedia}

@@ -5,8 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -15,19 +13,6 @@ import Container from '@material-ui/core/Container';
 import {useState } from 'react';
 import header from '../images/Orchid_header.jpg'
 import Card from '@material-ui/core/Card';
-
-// function Copyright(props) {
-//     return (
-//       <Typography variant="body2" color="textSecondary" align="center">
-//         {'Copyright © '}
-//         <Link color="inherit" href="https://material-ui.com/">
-//           Classify
-//         </Link>{' '}
-//         {new Date().getFullYear()}
-//         {'.'}
-//       </Typography>
-//     );
-//   }
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -68,9 +53,9 @@ export default function Register(props) {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
-  },
+            },
             body: JSON.stringify(formData),
-})
+        })
                 .then((r) => r.json())
                 .then((r) => handleResponse(r));
 
@@ -94,18 +79,16 @@ export default function Register(props) {
       setPassword(e.target.value)
     }
 
-    console.log(username)
-    console.log(password)
     return (
       <div>
       <Card>
       <img src={header}/>
       </Card>
-<Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
+        <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+        <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Register
@@ -152,23 +135,10 @@ export default function Register(props) {
           >
             Register
           </Button>
-          {/* <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid> */}
         </form>
       </div>
-      <Box mt={8}>
-        {/* <Copyright /> */}
-      </Box>
+        <Box mt={8}>
+        </Box>
     </Container>
     </div>
     )

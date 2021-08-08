@@ -7,8 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import {useState } from 'react';
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import {withRouter} from 'react-router-dom'
 
 //REDUX
 import { connect } from 'react-redux'
@@ -47,9 +46,6 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-
-
-
  function Period(props) {
     const classes = useStyles();
 
@@ -58,14 +54,11 @@ const useStyles = makeStyles((theme) => ({
         shadow:1,
       })
 
-  
-
       const handleClick = (e) => {
         console.log(props)
         
         props.history.push(`/periods/${props.period.name}/composers`);
       }
-
 
     return (
         <Card className={classes.card}
@@ -73,8 +66,7 @@ const useStyles = makeStyles((theme) => ({
         onMouseOver={()=>setState({ raised: true, shadow:3})} 
         onMouseOut={()=>setState({ raised:false, shadow:1 })} 
         raised={state.raised} zdepth={state.shadow}
-        onClick={handleClick}
-             
+        onClick={handleClick}   
         >
           <CardMedia
             className={classes.cardMedia}
@@ -90,8 +82,7 @@ const useStyles = makeStyles((theme) => ({
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary"
-            >
+            <Button size="small" color="primary">
               View
             </Button>
             <Button size="small" color="primary">

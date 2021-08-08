@@ -7,12 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import header from '../../images/Orchid_header.jpg'
 import NavBar from '../NavBar'
-
-
 
 //REDUX
 import { connect } from 'react-redux'
@@ -56,26 +52,16 @@ const useStyles = makeStyles((theme) => ({
  function PeriodsContainer(props) {
     const classes = useStyles();
 
-    // console.log(props)
-
     
     return (
         <div>
-            <Card>
-<img src={header}/>
-</Card>
+        <Card>
+        <img src={header}/>
+        </Card>
         <NavBar
         history={props.history}/>
       <React.Fragment>
       <CssBaseline />
-      {/* <AppBar position="relative"> */}
-        {/* <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar> */}
-      {/* </AppBar> */}
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -87,20 +73,6 @@ const useStyles = makeStyles((theme) => ({
             Classical music can largely be categorized by six main periods, each with their own stylistic characteristics, innovations, offshoot movements and stars. 
             As with all categorizations, these are merely approximations, and thus are only intended to ease the newcomer's navigation of the genre. 
             </Typography>
-            {/* <div className={classes.heroButtons}>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div> */}
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -118,18 +90,8 @@ const useStyles = makeStyles((theme) => ({
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-      </footer>
-      {/* End footer */}
     </React.Fragment>
-            
+
         </div>
     )
 }

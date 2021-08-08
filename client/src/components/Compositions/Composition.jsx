@@ -1,15 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
 import {connect} from 'react-redux'
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
 
@@ -43,10 +40,6 @@ const useStyles = makeStyles((theme) => ({
       };
 
       const handleClick = (value) => {
-        console.log(value.target.innerHTML)
-        console.log(value)
-        
-    
         fetch(`http://localhost:3000/compositions/${props.value.id}`, {
             })
             .then(res => res.json())
@@ -54,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
       }
 
       const handleAddToPlaylist = (value) => {
-        // console.log(props.value)
         fetch("http://localhost:3000/playlist_compositions", {
             method: "POST",
             headers: {
@@ -80,9 +72,6 @@ const useStyles = makeStyles((theme) => ({
         token: props.currentUser.token})
       }
       
-      console.log(props)
-      console.log(props.value)
-      console.log(props.currentComposition)
       
 
     return (

@@ -6,10 +6,6 @@ import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import header from '../images/orchid_logo_square.jpg'
 
 const useStyles = makeStyles({
@@ -64,7 +60,7 @@ const list = (anchor) => (
       id="logo"></img>
       <br></br>
       <Divider/>
-    <List>
+        <List>
         <ListItem button 
         onClick={handleHomeClick}>Home
         </ListItem>
@@ -84,10 +80,8 @@ const list = (anchor) => (
 );
 
 
-
-
-    return (
-<div>
+  return (
+    <div>
       {['navbar'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>

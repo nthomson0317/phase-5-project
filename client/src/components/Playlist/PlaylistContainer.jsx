@@ -31,28 +31,28 @@ function PlaylistContainer(props) {
     console.log(props)
     return (
         <div>
-                                <Card>
-<img src={header}/>
-</Card>
+          <Card>
+            <img src={header}/>
+          </Card>
             <Typography gutterBottom variant="h1" component="h2" align="center">
               {props.username}'s {props.playlist.name}
             </Typography>
             <div>
           <NavBar
-        history={props.history}/>
-        <br></br>
+            history={props.history}/>
+            <br></br>
            <Button variant="outlined" color="secondary"
-           onClick={handleClick}>
-        Play Composition
-      </Button>
+              onClick={handleClick}>
+              Play Composition
+            </Button>
       <br></br>
       <br></br>
       <div>
           {toggled ?  <PlaylistPlayer /> :  null}
           </div>
-    <List className={classes.root} >
-      {props.playlist.playlist_compositions.map((comp) => {
-        const labelId = `checkbox-list-label-${comp}`;
+        <List className={classes.root} >
+          {props.playlist.playlist_compositions.map((comp) => {
+          const labelId = `checkbox-list-label-${comp}`;
 
         return (
           <Playlist
@@ -61,12 +61,12 @@ function PlaylistContainer(props) {
           setCurrentComposition={props.setCurrentComposition}
           setUser={props.setUser}/>
 
-        );
-      })}
-    </List>
-    </div>
+          );
+          })}
+        </List>
+          </div>
             
-        </div>
+      </div>
     )
 }
 
@@ -79,7 +79,5 @@ let mapStateToProps = (globalState) => {
     }
   }
 
-
-  
   
   export default connect(mapStateToProps)(withRouter(PlaylistContainer))
