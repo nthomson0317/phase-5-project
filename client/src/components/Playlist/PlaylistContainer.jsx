@@ -10,6 +10,7 @@ import {withRouter} from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import header from '../../images/Orchid_header.jpg'
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -50,6 +51,11 @@ function PlaylistContainer(props) {
       <div>
           {toggled ?  <PlaylistPlayer /> :  null}
           </div>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
         <List className={classes.root} >
           {props.playlist.playlist_compositions.map((comp) => {
           const labelId = `checkbox-list-label-${comp}`;
@@ -64,6 +70,7 @@ function PlaylistContainer(props) {
           );
           })}
         </List>
+        </Box>
           </div>
             
       </div>

@@ -9,6 +9,7 @@ import NavBar from '../NavBar'
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import header from '../../images/Orchid_header.jpg'
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -50,6 +51,11 @@ const handleClick = () => {
             <div>
               {toggled ?  <CompositionPlayer /> :  null}
             </div>
+            <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
               <List className={classes.root}>
                 {props.composer.compositions.map((value) => {
                 const labelId = `checkbox-list-label-${value}`;
@@ -62,6 +68,7 @@ const handleClick = () => {
                     );
                 })}
               </List>
+              </Box>
       </div>
     )
 }

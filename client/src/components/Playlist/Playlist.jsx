@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
         } else {
           newChecked.splice(currentIndex, 1);
         }
-    
         setChecked(newChecked);
       }
 
@@ -57,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
             })
       .then(res => res.json())
       .then((res) => deleteCompositionFromPlaylistState(res))
-
         }
 
 
@@ -76,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 
     return (
-        <div>
+      <div>
         <ListItem key={props.comp.id} role={undefined} dense button onClick={handleToggle(props.comp)}>
         <ListItemIcon>
           <Checkbox
@@ -85,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
             tabIndex={-1}
             disableRipple
             inputProps={{ 'aria-labelledby': props.labelId }}
-            
           />
         </ListItemIcon>
         <ListItemText 
@@ -95,17 +92,16 @@ const useStyles = makeStyles((theme) => ({
         <ListItemSecondaryAction>
         <ListItemText id={props.labelId} primary={`${props.comp.composition.genre}`} />
         </ListItemSecondaryAction>
-        
-      </ListItem>
-      <Button
+        </ListItem>
+        <Button
         variant="contained"
         color="secondary"
         className={classes.button}
         onClick={handleDeleteCompositionFromPlaylist}
         startIcon={<DeleteIcon />}
-      >
+        >
         Delete
-      </Button>
+        </Button>
 
     </div>
     )
