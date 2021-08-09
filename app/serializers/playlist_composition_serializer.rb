@@ -1,5 +1,5 @@
 class PlaylistCompositionSerializer < ActiveModel::Serializer
-  attributes :composition_id, :playlist_id
+  attributes :id, :composition_id, :playlist_id
   belongs_to :composition
 
 

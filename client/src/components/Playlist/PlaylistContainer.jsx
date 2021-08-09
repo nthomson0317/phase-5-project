@@ -35,7 +35,7 @@ function PlaylistContainer(props) {
             <img src={header}/>
           </Card>
             <Typography gutterBottom variant="h1" component="h2" align="center">
-              {props.username}'s {props.playlist.name}
+              {props.playlist.name}
             </Typography>
             <div>
           <NavBar
