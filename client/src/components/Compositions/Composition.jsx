@@ -54,10 +54,13 @@ const useStyles = makeStyles((theme) => ({
               "authorization": props.userToken
             },
                 body: JSON.stringify({
-                composition_id: props.value.id
+                playlist_id: 1,
+                composition_id: props.value.id,
+
               })
               })
       .then(res => res.json())
+      // .then((res) => console.log(res))
       .then((res) => addCompositionToPlaylistState(res))
       }
 
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
       }
       
       
-
+console.log(props.value)
     return (
         <div>
             <ListItem key={props.value.id} role={undefined} dense button onClick={handleToggle(props.value)}>

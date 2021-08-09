@@ -22,7 +22,7 @@ class PlaylistCompositionsController < ApplicationController
     private
 
     def playlist_composition_params
-        params.permit(:id)
+        params.permit(:playlist_id, :composition_id)
     end
 
 end

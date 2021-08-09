@@ -909,4 +909,3 @@ User.create(username: 'ntntnt', password: 'abc123')
 ####################################################################PLAYLISTS#####################################
 
 
-Playlist.create(name: 'Schumann Playlist', user_id: 1)
