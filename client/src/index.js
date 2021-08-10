@@ -64,7 +64,7 @@ const compositionReducer = (state = initialCompositionState, action) => {
 
 //CURRENT COMPOSITION STATE
 const initialCurrentCompositionState = {
-  currentComposition: ""
+  currentComposition: {}
 }
 
 const currentCompositionReducer = (state = initialCurrentCompositionState, action) => {

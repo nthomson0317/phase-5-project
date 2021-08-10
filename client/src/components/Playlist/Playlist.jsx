@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       }
 
       const handleClick = () => {
-          props.setCurrentComposition(props.comp.composition.id)
+          props.setCurrentComposition(props.comp.composition.spotify_id)
           console.log(props.comp)
 
       }
