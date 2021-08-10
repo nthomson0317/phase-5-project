@@ -13,12 +13,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
-      maxWidth: 360,
+      maxWidth: 600,
       backgroundColor: theme.palette.background.paper,
     },
 
       button: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(2),
       },
   }));
 

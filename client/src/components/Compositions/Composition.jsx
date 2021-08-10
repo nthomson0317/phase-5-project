@@ -13,7 +13,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
   },
 }));
