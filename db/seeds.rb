@@ -897,8 +897,12 @@ Composition.all.each do |composition|
         
     else
         id = track.instance_variable_get('@id')
+        if id.nil?
+            composition.destroy
+        else
         composition.update(spotify_id: id)
     end
+end
 end
 
     # Composition.where(spotify_id: nil).destroy_all

@@ -42,7 +42,7 @@ function PlaylistContainer(props) {
           <NavBar
             history={props.history}/>
             <br></br>
-           <Button variant="outlined" color="secondary"
+           <Button variant="outlined" color="secondary" 
               onClick={handleClick}>
               Play Composition
             </Button>

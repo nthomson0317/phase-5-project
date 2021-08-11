@@ -28,6 +28,29 @@ const handleClick = () => {
   setToggled(!toggled)
 }
 
+/////DIVIDE COMPOSITIONS BY GENRE
+///// MAP EACH GENRE INTO A SECTION OF THE PLAYLIST, DIVIDED BY GENRE NAME
+
+const orchestralCompositions = props.composer.compositions.filter((compObj) => {
+  return compObj.genre == 'Orchestral'
+})
+
+const keyboardCompositions = props.composer.compositions.filter((compObj) => {
+  return compObj.genre == 'Keyboard'
+})
+
+const vocalCompositions = props.composer.compositions.filter((compObj) => {
+  return compObj.genre == 'Vocal'
+})
+
+const chamberCompositions = props.composer.compositions.filter((compObj) => {
+  return compObj.genre == 'Chamber'
+})
+
+const stageCompositions = props.composer.compositions.filter((compObj) => {
+  return compObj.genre == 'Chamber'
+})
+
     return (
       <div>
         <Card>
@@ -51,13 +74,92 @@ const handleClick = () => {
             <div>
               {toggled ?  <CompositionPlayer /> :  null}
             </div>
+            <Typography align="center" variant="h4">Orchestral</Typography>
             <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
           >
+            
               <List className={classes.root}>
-                {props.composer.compositions.map((value) => {
+                {orchestralCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                })}
+              </List>
+              <br></br>
+              </Box>
+              <Typography align="center" variant="h4">Keyboard</Typography>
+              <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+              <List className={classes.root}>
+                {keyboardCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                })}
+              </List>
+              </Box>
+              <Typography align="center" variant="h4">Vocal</Typography>
+              <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+              <List className={classes.root}>
+                {vocalCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                })}
+              </List>
+              </Box>
+              <Typography align="center" variant="h4">Chamber</Typography>
+              <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+              <List className={classes.root}>
+                {chamberCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                })}
+              </List>
+              </Box>
+              <Typography align="center" variant="h4">Stage</Typography>
+              <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+              <List className={classes.root}>
+                {stageCompositions.map((value) => {
                 const labelId = `checkbox-list-label-${value}`;
                   return (
                     <Composition

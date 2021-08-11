@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
         setChecked(newChecked);
       };
 
-      const handleClick = (value) => {
+      const handleClick = () => {
+        console.log(props.value)
         fetch(`http://localhost:3000/compositions/${props.value.id}`, {
             })
             .then(res => res.json())
@@ -76,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
       }
       
       
-console.log(props.value)
     return (
         <div>
             <ListItem key={props.value.id} role={undefined} dense button onClick={handleToggle(props.value)}>
