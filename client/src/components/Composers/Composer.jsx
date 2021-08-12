@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
               {props.composer.name}
             </Typography>
             <Typography>
-              {props.composer.birth} - {props.composer.death}
+              {props.composer.birth.split('-')[0]} - {props.composer.death.split('-')[0]}
             </Typography>
           </CardContent>
           <CardActions>
