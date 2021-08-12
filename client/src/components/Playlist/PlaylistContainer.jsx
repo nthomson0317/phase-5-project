@@ -18,6 +18,16 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 600,
       backgroundColor: theme.palette.background.paper,
     },
+    button: {
+      justifyContent: 'center',
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    }
   }));
 
 function PlaylistContainer(props) {
@@ -42,7 +52,12 @@ function PlaylistContainer(props) {
           <NavBar
             history={props.history}/>
             <br></br>
-           <Button variant="outlined" color="secondary" 
+            <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+           <Button className={classes.button} variant="outlined" color="secondary" 
               onClick={handleClick}>
               Play Composition
             </Button>
@@ -51,6 +66,7 @@ function PlaylistContainer(props) {
       <div>
           {toggled ?  <PlaylistPlayer /> :  null}
           </div>
+          </Box>
           <Box
             display="flex"
             justifyContent="center"
