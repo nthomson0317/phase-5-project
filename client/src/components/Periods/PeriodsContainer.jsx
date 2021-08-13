@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
                  key={card.id}
                  period={card}
                  history={props.history}
+                 setCurrentPeriod={props.setCurrentPeriod}
                  />
               </Grid>
             ))}

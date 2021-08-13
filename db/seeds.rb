@@ -855,21 +855,21 @@ contemporary_composers
 
 # telemann_compositions
 
-# def vivaldi_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
-#     json = JSON.parse response
-#     puts json
+def vivaldi_compositions
+    response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
+    json = JSON.parse response
+    puts json
 
-#     if !json.nil?
-#         json["works"].map do |composition|
-#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
-#         end
-#     else
-#         puts "Error seeding compositions"
-#     end
-#  end
+    if !json.nil?
+        json["works"].map do |composition|
+            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
+        end
+    else
+        puts "Error seeding compositions"
+    end
+ end
 
-# vivaldi_compositions
+vivaldi_compositions
 
 
 def schumann_compositions

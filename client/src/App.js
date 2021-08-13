@@ -11,6 +11,20 @@ import PlaylistContainer from './components/Playlist/PlaylistContainer'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
+//////
+// import CssBaseline from "@material-ui/core/CssBaseline";
+// import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+
+// const themeDark = createTheme({
+//   palette: {
+//     background: {
+//       default: "#222222"
+//     },
+//     // text: {
+//     //   primary: "#ffffff"
+//     // }
+//   }
+// });
 
 function App(props) {
 
@@ -24,7 +38,8 @@ function App(props) {
   let renderPeriods = (routerProps) => {
     return <PeriodsContainer 
     history={props.history}
-    logout={props.logout}/>
+    logout={props.logout}
+    setCurrentPeriod={props.setCurrentPeriod}/>
   }
 
   let renderComposers = (routerProps) => {
@@ -64,7 +79,7 @@ function App(props) {
   let renderComposerCompositions = (routerProps) => {
     let name = routerProps.match.params.composer_name
 
-    let composer = props.periods[3].composers.find(composer => composer.name == name)
+    let composer = props.currentPeriod.composers.find(composer => composer.name == name)
     console.log(composer)
     
       return <CompositionsContainer
@@ -93,9 +108,13 @@ function App(props) {
     />
   }
 
+  console.log(props)
+
   return (
 
     <div>
+          {/* <ThemeProvider theme={themeDark}>
+      <CssBaseline /> */}
     <Switch>
       <Route path="/register" render={ renderRegistrationForm } />
       <Route exact path="/periods" render={renderPeriods} />
@@ -106,6 +125,7 @@ function App(props) {
       <Route path = "/playlist" render={renderPlaylist}/>
       <Route exact path="/" render={renderHome} />
     </Switch>
+    {/* </ThemeProvider> */}
 
     </div>
   );
@@ -119,25 +139,32 @@ let setPeriods = (allPeriods) => {
   }
 }
 
-let setComposers = (allComposers) => {
+// let setComposers = (allComposers) => {
 
-  return {
-    type: "GET_COMPOSERS",
-    payload: allComposers
-  }
-}
+//   return {
+//     type: "GET_COMPOSERS",
+//     payload: allComposers
+//   }
+// }
 
-let setCompositions = (allCompositions) => {
-  return {
-    type: "GET_COMPOSITIONS",
-    payload: allCompositions
-  }
-}
+// let setCompositions = (allCompositions) => {
+//   return {
+//     type: "GET_COMPOSITIONS",
+//     payload: allCompositions
+//   }
+// }
 
 let setCurrentComposition = (currentComposition) => {
   return {
     type: "GET_CURRENT_COMPOSITION",
     payload: currentComposition
+  }
+}
+
+let setCurrentPeriod = (currentPeriod) => {
+  return {
+    type: "GET_CURRENT_PERIOD",
+    payload: currentPeriod
   }
 }
 
@@ -158,17 +185,19 @@ let mapStateToProps = (globalState) => {
   // let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
   return {
     periods: globalState.periodInfo.periods,
-    composers: globalState.composerInfo.composers,
-    compositions: globalState.compositionInfo.compositions
+    currentPeriod: globalState.currentPeriodInfo.currentPeriod,
+    // composers: globalState.composerInfo.composers,
+    // compositions: globalState.compositionInfo.compositions
   }
 }
 
 
 let mapDispatchToProps = {
   setPeriods,
-  setComposers,
-  setCompositions,
+  // setComposers,
+  // setCompositions,
   setCurrentComposition,
+  setCurrentPeriod,
   setUser,
   logout
 }

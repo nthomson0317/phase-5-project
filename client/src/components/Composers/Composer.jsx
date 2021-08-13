@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
         <Card className={classes.card}
         classes={{root: state.raised ? classes.cardHovered : ""}}
         onMouseOver={()=>setState({ raised: true, shadow:3})} 
-        onMouseOut={()=>setState({ raised:false, shadow:1 })} 
+        onMouseOut={()=>setState({ raised: false, shadow:1 })} 
         raised={state.raised} zdepth={state.shadow}
         onClick={handleClick}
         >
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
 let mapStateToProps = (globalState) => {
     return {
         periods: globalState.periodInfo.periods,
-        composers: globalState.composerInfo.composers
+        composers: globalState.currentPeriodInfo.currentPeriod.composers
     }
 }
 

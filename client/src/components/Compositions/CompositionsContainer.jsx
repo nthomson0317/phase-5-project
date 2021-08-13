@@ -62,6 +62,8 @@ const stageCompositions = props.composer.compositions.filter((compObj) => {
   return compObj.genre == 'Chamber'
 })
 
+console.log(props)
+
     return (
       <div>
         <Card>

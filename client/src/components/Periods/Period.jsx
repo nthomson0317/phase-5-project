@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
       })
 
       const handleClick = (e) => {
-        console.log(props)
+        props.setCurrentPeriod(props.period)
         
         props.history.push(`/periods/${props.period.name}/composers`);
       }

@@ -92,7 +92,7 @@ function ComposersContainer(props) {
 
     let mapStateToProps = (globalState) => {
         return {
-            composers: globalState.composerInfo.composers
+            composers: globalState.currentPeriodInfo.currentPeriod.composers
         }
     }
 export default connect(mapStateToProps)(ComposersContainer) 
