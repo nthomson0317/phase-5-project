@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Orchid is a Spotify-like app designed specifically for classical music. Users can sign up, browse by period, composer, composition, and create their own unique playlists. This app was built using React with Redux and Ruby on Rails.
