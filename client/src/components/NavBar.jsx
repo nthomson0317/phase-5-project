@@ -7,6 +7,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import header from '../images/orchid_logo_square.jpg'
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles({
   list: {
@@ -64,6 +65,10 @@ const list = (anchor) => (
       id="logo"></img>
       <br></br>
       <Divider/>
+      <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center">
         <List>
         <ListItem button 
         onClick={handleHomeClick}>Home
@@ -82,7 +87,7 @@ const list = (anchor) => (
         </ListItem>
       
     </List>
-
+    </Box>
   </div>
 );
 
