@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import header from '../images/orchid_logo_square.jpg'
 import Box from "@material-ui/core/Box";
+import { ListItemText } from '@material-ui/core'
 
 const useStyles = makeStyles({
   list: {
@@ -16,6 +17,9 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
+  listItemText:{
+    fontSize:'1em',//Insert your required size
+  }
 });
 
 export default function NavBar(props) {
@@ -71,19 +75,29 @@ const list = (anchor) => (
                   alignItems="center">
         <List>
         <ListItem button 
-        onClick={handleHomeClick}>Home
+        onClick={handleHomeClick}
+        style={{ color: "#F9C6E8" }}>
+          <ListItemText>Home</ListItemText>
         </ListItem>
         <ListItem button 
-        onClick={handleRegisterClick}>Register
+        onClick={handleRegisterClick}
+        style={{ color: "#F9C6E8" }}>
+          <ListItemText>Register</ListItemText>
         </ListItem>
         <ListItem button 
-        onClick={handlePeriodsClick}>Periods
+        onClick={handlePeriodsClick}
+        style={{ color: "#F9C6E8" }}>
+          <ListItemText>Periods</ListItemText>
         </ListItem>
         <ListItem button 
-        onClick={handlePlaylistClick}>Playlist
+        onClick={handlePlaylistClick}
+        style={{ color: "#F9C6E8" }}>
+          <ListItemText>Playlist</ListItemText>
         </ListItem>
         <ListItem button 
-        onClick={props.logout}>Logout
+        onClick={props.logout}
+        style={{ color: "#F9C6E8" }}>
+          <ListItemText>Logout</ListItemText>
         </ListItem>
       
     </List>
