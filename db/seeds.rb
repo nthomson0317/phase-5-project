@@ -182,7 +182,7 @@ contemporary_composers
 #/work/list/composer/129/genre/Popular.json
 
 # def dufay_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/1/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/82/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -198,7 +198,7 @@ contemporary_composers
 # dufay_compositions
 
 # def leonin_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/2/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/220/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -214,7 +214,7 @@ contemporary_composers
 # leonin_compositions
 
 # def machaut_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/3/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/157/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -231,7 +231,7 @@ contemporary_composers
 
 
 # def perotin_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/4/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/219/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -247,7 +247,7 @@ contemporary_composers
 # perotin_compositions
 
 # def byrd_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/5/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/86/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -263,7 +263,7 @@ contemporary_composers
 # byrd_compositions
 
 # def prez_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/6/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/50/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -279,7 +279,7 @@ contemporary_composers
 # prez_compositions
 
 # def dowland_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/7/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/102/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -295,7 +295,7 @@ contemporary_composers
 # dowland_compositions
 
 # def gesualdo_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/8/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/14/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -311,7 +311,7 @@ contemporary_composers
 # gesualdo_compositions
 
 # def gibbons_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/9/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/151/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -328,7 +328,7 @@ contemporary_composers
 
 
 # def janequin_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/10/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/23/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -344,7 +344,7 @@ contemporary_composers
 # janequin_compositions
 
 # def lassus_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/11/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/88/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -360,7 +360,7 @@ contemporary_composers
 # lassus_compositions
 
 # def monteverdi_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/12/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/39/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -376,7 +376,7 @@ contemporary_composers
 # monteverdi_compositions
 
 # def obrecht_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/13/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/28/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -392,7 +392,7 @@ contemporary_composers
 # obrecht_compositions
 
 # def ockeghem_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/14/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/117/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -408,7 +408,7 @@ contemporary_composers
 # ockeghem_compositions
 
 # def palestrina_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/15/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/214/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -424,7 +424,7 @@ contemporary_composers
 # palestrina_compositions
 
 # def praetorius_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/16/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/78/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -440,7 +440,7 @@ contemporary_composers
 # praetorius_compositions
 
 # def schutz_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/17/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/191/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -456,7 +456,7 @@ contemporary_composers
 # schutz_compositions
 
 # def sweelinck_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/18/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/182/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -472,7 +472,7 @@ contemporary_composers
 # sweelinck_compositions
 
 # def tallis_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/19/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/126/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -488,7 +488,7 @@ contemporary_composers
 # tallis_compositions
 
 # def taverner_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/20/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/54/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -504,7 +504,7 @@ contemporary_composers
 # taverner_compositions
 
 # def victoria_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/21/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/205/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -517,10 +517,10 @@ contemporary_composers
 #     end
 # end
 
-# victoria_compositions
+# # victoria_compositions
 
 # def albinoni_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/22/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/27/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -535,24 +535,24 @@ contemporary_composers
 
 # albinoni_compositions
 
-def bach_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/87/genre/all.json'
-    json = JSON.parse response
-    puts json
+# def bach_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/87/genre/all.json'
+#     json = JSON.parse response
+#     puts json
 
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 23)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 23)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
 
-bach_compositions
+# bach_compositions
 
 # def biber_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/24/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/47/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -568,7 +568,7 @@ bach_compositions
 # biber_compositions
 
 # def buxtehude_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/25/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/73/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -584,7 +584,7 @@ bach_compositions
 # buxtehude_compositions
 
 # def charpentier_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/26/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/9/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -600,7 +600,7 @@ bach_compositions
 # charpentier_compositions
 
 # def corelli_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/27/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/139/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -616,7 +616,7 @@ bach_compositions
 # corelli_compositions
 
 # def couperin_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/28/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/128/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -632,7 +632,7 @@ bach_compositions
 # couperin_compositions
 
 # def frescobaldi_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/29/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/58/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -647,24 +647,24 @@ bach_compositions
 
 # frescobaldi_compositions
 
-def handel_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/30/genre/all.json'
-    json = JSON.parse response
-    puts json
+# def handel_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/30/genre/all.json'
+#     json = JSON.parse response
+#     puts json
 
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 30)
-        end
-    else
-        puts "Error seeding compositions"
-    end
-end
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 30)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+# end
 
-handel_compositions
+# handel_compositions
 
 # def lully_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/31/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/10/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -680,7 +680,7 @@ handel_compositions
 # lully_compositions
 
 # def marais_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/32/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/204/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -696,7 +696,7 @@ handel_compositions
 # marais_compositions
 
 # def b_marcello_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/33/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/177/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -712,7 +712,7 @@ handel_compositions
 # b_marcello_compositions
 
 # def a_marcello_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/34/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/187/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -728,7 +728,7 @@ handel_compositions
 # a_marcello_compositions
 
 # def pachelbel_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/35/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/115/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -744,7 +744,7 @@ handel_compositions
 # pachelbel_compositions
 
 # def pergolesi_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/36/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/113/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -760,7 +760,7 @@ handel_compositions
 # pergolesi_compositions
 
 # def purcell_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/37/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/199/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -776,7 +776,7 @@ handel_compositions
 # purcell_compositions
 
 # def rameau_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/38/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/178/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -792,7 +792,7 @@ handel_compositions
 # rameau_compositions
 
 # def scarlatti_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/39/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/97/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -808,7 +808,7 @@ handel_compositions
 # scarlatti_compositions
 
 # def a_scarlatti_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/40/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/65/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -824,7 +824,7 @@ handel_compositions
 # a_scarlatti_compositions
 
 # def tartini_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/41/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/167/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -840,7 +840,7 @@ handel_compositions
 # tartini_compositions
 
 # def telemann_compositions
-#     response = RestClient.get 'https://api.openopus.org/work/list/composer/42/genre/all.json'
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/83/genre/all.json'
 #     json = JSON.parse response
 #     puts json
 
@@ -855,21 +855,21 @@ handel_compositions
 
 # telemann_compositions
 
-def vivaldi_compositions
-    response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
-    json = JSON.parse response
-    puts json
+# def vivaldi_compositions
+#     response = RestClient.get 'https://api.openopus.org/work/list/composer/43/genre/all.json'
+#     json = JSON.parse response
+#     puts json
 
-    if !json.nil?
-        json["works"].map do |composition|
-            Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
-        end
-    else
-        puts "Error seeding compositions"
-    end
- end
+#     if !json.nil?
+#         json["works"].map do |composition|
+#             Composition.create(name: "#{composition["title"]}", genre: "#{composition["genre"]}", composer_id: 43)
+#         end
+#     else
+#         puts "Error seeding compositions"
+#     end
+#  end
 
-vivaldi_compositions
+# vivaldi_compositions
 
 
 def schumann_compositions
@@ -889,6 +889,7 @@ def schumann_compositions
 schumann_compositions
 
 Composition.all.each do |composition| 
+    # sleep 4
     begin
     RSpotify.authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
         tracks = RSpotify::Track.search(composition[:name])

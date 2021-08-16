@@ -30,6 +30,10 @@ const handleHomeClick = (e) => {
     props.history.push(`/`);
   }
 
+  const handlePeriodsClick = (e) => {
+    props.history.push(`/periods`);
+  }
+
   const handleRegisterClick = (e) => {
     props.history.push(`/register`);
   }
@@ -66,6 +70,9 @@ const list = (anchor) => (
         </ListItem>
         <ListItem button 
         onClick={handleRegisterClick}>Register
+        </ListItem>
+        <ListItem button 
+        onClick={handlePeriodsClick}>Periods
         </ListItem>
         <ListItem button 
         onClick={handlePlaylistClick}>Playlist
