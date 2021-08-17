@@ -62,9 +62,7 @@ const useStyles = makeStyles((theme) => ({
         <Card>
         <img src={header}/>
         </Card>
-        <NavBar
-        className={classes.root}
-        history={props.history}/>
+        
       <React.Fragment>
       <CssBaseline />
       <main>
