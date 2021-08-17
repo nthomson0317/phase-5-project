@@ -80,7 +80,7 @@ const handleHomeClick = (e) => {
       style={{
         borderRadius: "50%",
         width: 180,
-        height: 180,
+        height: 170,
         display: "block"
       }}></img>
       <br></br>
