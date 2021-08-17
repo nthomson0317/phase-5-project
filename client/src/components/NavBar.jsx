@@ -76,7 +76,13 @@ const handleHomeClick = (e) => {
       <div className={classes.toolbar} />
       <br></br>
       <img src={header}
-      id="logo"></img>
+      id="logo"
+      style={{
+        borderRadius: "50%",
+        width: 180,
+        height: 180,
+        display: "block"
+      }}></img>
       <br></br>
       <Divider/>
       <Box

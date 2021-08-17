@@ -38,11 +38,13 @@
 }
 
 img#logo {
-  width: 200px;
+  width: 140px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 140px;
+
 }
+
