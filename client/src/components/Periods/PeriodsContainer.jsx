@@ -14,12 +14,16 @@ import NavBar from '../NavBar'
 import { connect } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
     icon: {
       marginRight: theme.spacing(2),
     },
     heroContent: {
       backgroundColor: theme.palette.background.paper,
       padding: theme.spacing(8, 0, 6),
+      display: 'flex'
     },
     heroButtons: {
       marginTop: theme.spacing(4),
@@ -54,11 +58,12 @@ const useStyles = makeStyles((theme) => ({
 
     
     return (
-        <div>
+        <div >
         <Card>
         <img src={header}/>
         </Card>
         <NavBar
+        className={classes.root}
         history={props.history}/>
       <React.Fragment>
       <CssBaseline />

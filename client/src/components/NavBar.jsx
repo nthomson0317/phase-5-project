@@ -16,30 +16,22 @@ import { MenuItem } from '@material-ui/core';
 import header from '../images/Orchid_header.jpg'
 import Box from '@material-ui/core/Box';
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+
   },
   drawerPaper: {
     width: drawerWidth,
+    
   },
-  // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
-  },
+
 }));
 
 export default function NavBar(props) {
@@ -73,13 +65,6 @@ const handleHomeClick = (e) => {
   return (
     <div className={classes.root}>
     <CssBaseline />
-    {/* <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
-        <Typography variant="h6" noWrap>
-          Permanent drawer
-        </Typography>
-      </Toolbar>
-    </AppBar> */}
     <Drawer
       className={classes.drawer}
       variant="permanent"

@@ -8,10 +8,13 @@ import Composition from './components/Compositions/Composition'
 import CompositionsContainer from './components/Compositions/CompositionsContainer'
 import Register from './components/Register'
 import PlaylistContainer from './components/Playlist/PlaylistContainer'
+import NavBar from './components/NavBar'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
+
 //////
+import { makeStyles } from '@material-ui/core/styles';
 // import CssBaseline from "@material-ui/core/CssBaseline";
 // import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 
@@ -26,7 +29,14 @@ import {connect} from 'react-redux'
 //   }
 // });
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  }
+}))
+
 function App(props) {
+  const classes = useStyles();
 
   useEffect(() => {
     fetch("http://localhost:3000/periods")
@@ -115,6 +125,9 @@ function App(props) {
     <div>
           {/* <ThemeProvider theme={themeDark}>
       <CssBaseline /> */}
+      <NavBar
+        className={classes.root}
+        history={props.history}/>
     <Switch>
       <Route path="/register" render={ renderRegistrationForm } />
       <Route exact path="/periods" render={renderPeriods} />
