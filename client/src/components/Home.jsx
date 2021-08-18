@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      
     },
     avatar: {
       margin: theme.spacing(1),
@@ -94,7 +95,7 @@ function Home(props) {
           <img src={header}/>
         </Card>
       
-          <Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs"  >
 
          <CssBaseline />
             <div className={classes.paper}>

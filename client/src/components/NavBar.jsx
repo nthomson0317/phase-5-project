@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    background: "#B0B3BA"
     
   },
 
@@ -78,10 +79,15 @@ const handleHomeClick = (e) => {
       }}></img>
       <br></br>
       <Divider/>
+      <br></br>
       <Box
         display="flex"
         justifyContent="center"
-        alignItems="center">
+        alignItems="center"
+        borderRadius={16}
+        borderColor="#ffc0cb"
+        border={2}
+        width="75%">
         <List>
         <ListItem>
            <Button onClick={handleHomeClick}
