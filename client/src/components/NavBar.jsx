@@ -8,13 +8,14 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 import { MenuItem } from '@material-ui/core';
 import header from '../images/Orchid_header.jpg'
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 const drawerWidth = 200;
 
@@ -90,30 +91,35 @@ const handleHomeClick = (e) => {
                   justifyContent="center"
                   alignItems="center">
         <List>
-        <ListItem button 
-        onClick={handleHomeClick}
+        <ListItem>
+           <Button onClick={handleHomeClick}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
-          <MenuItem>Home</MenuItem>
+          Home Page
+        </Button>
+          
         </ListItem>
-        <ListItem button 
+        <ListItem> 
+          <Button 
         onClick={handleRegisterClick}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
-          <MenuItem>Register</MenuItem>
+          Register
+          </Button>
         </ListItem>
-        <ListItem button 
+        <ListItem> 
+          <Button
         onClick={handlePeriodsClick}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
-          <MenuItem>Periods</MenuItem>
+          Periods</Button>
         </ListItem>
-        <ListItem button 
+        <ListItem> <Button
         onClick={handlePlaylistClick}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
-          <MenuItem>Playlist</MenuItem>
+          Playlist</Button>
         </ListItem>
-        <ListItem button 
+        <ListItem> <Button
         onClick={props.logout}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
-          <MenuItem>Logout</MenuItem>
+          Logout</Button>
         </ListItem>
       
     </List>
