@@ -2,17 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
-import { MenuItem } from '@material-ui/core';
 import header from '../images/Orchid_header.jpg'
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -87,16 +79,15 @@ const handleHomeClick = (e) => {
       <br></br>
       <Divider/>
       <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center">
+        display="flex"
+        justifyContent="center"
+        alignItems="center">
         <List>
         <ListItem>
            <Button onClick={handleHomeClick}
         style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
           Home Page
         </Button>
-          
         </ListItem>
         <ListItem> 
           <Button 
