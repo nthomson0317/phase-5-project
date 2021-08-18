@@ -12,33 +12,11 @@ import NavBar from './components/NavBar'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-
 //////
-import { makeStyles } from '@material-ui/core/styles';
-// import CssBaseline from "@material-ui/core/CssBaseline";
-// import { ThemeProvider, createTheme } from "@material-ui/core/styles";
-
-// const themeDark = createTheme({
-//   palette: {
-//     background: {
-//       default: "#222222"
-//     },
-//     // text: {
-//     //   primary: "#ffffff"
-//     // }
-//   }
-// });
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  }
-}))
 
 
 
 function App(props) {
-  const classes = useStyles();
 
   useEffect(() => {
     fetch("http://localhost:3000/periods")
@@ -128,7 +106,7 @@ function App(props) {
           {/* <ThemeProvider theme={themeDark}>
       <CssBaseline /> */}
       <NavBar
-        className={classes.root}
+
         history={props.history}/>
     <Switch>
       <Route path="/register" render={ renderRegistrationForm } />
@@ -153,21 +131,6 @@ let setPeriods = (allPeriods) => {
     payload: allPeriods
   }
 }
-
-// let setComposers = (allComposers) => {
-
-//   return {
-//     type: "GET_COMPOSERS",
-//     payload: allComposers
-//   }
-// }
-
-// let setCompositions = (allCompositions) => {
-//   return {
-//     type: "GET_COMPOSITIONS",
-//     payload: allCompositions
-//   }
-// }
 
 let setCurrentComposition = (currentComposition) => {
   return {
@@ -201,16 +164,12 @@ let mapStateToProps = (globalState) => {
   return {
     periods: globalState.periodInfo.periods,
     currentPeriod: globalState.currentPeriodInfo.currentPeriod,
-    // composers: globalState.composerInfo.composers,
-    // compositions: globalState.compositionInfo.compositions
   }
 }
 
 
 let mapDispatchToProps = {
   setPeriods,
-  // setComposers,
-  // setCompositions,
   setCurrentComposition,
   setCurrentPeriod,
   setUser,
