@@ -15,7 +15,7 @@ const drawerWidth = 200;
 const useStyles = makeStyles((theme) => 
   createStyles({
   root: {
-      color: theme.palette.secondary.main,
+    background: theme.palette.secondary.main
   },
 
   drawer: {
@@ -131,8 +131,12 @@ const handleHomeClick = (e) => {
     <Divider/>
       <br></br>
     <form className={classes.root} noValidate autoComplete="off">
-  <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined" borderRadius={16}
-        color={classes.root.color}
+  <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"             
+              classes={{
+              root: classes.root, // class name, e.g. `classes-nesting-root-x`
+              label: classes.label, // class name, e.g. `classes-nesting-label-x`
+            }}
+        
        />
 </form>
     </Drawer>

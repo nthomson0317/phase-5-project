@@ -16,9 +16,24 @@ import {useState } from 'react';
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
-import header from '../images/Orchid_header.jpg'
+
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    // borderColor: theme.palette.secondary.main,
+    // style: { width: '5rem', height: '5rem' },
+    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    background: theme.palette.secondary.main
+    // borderRadius: 3,
+    // border: 0,
+    // color: 'white',
+    // height: 48,
+    // padding: '0 30px',
+    // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  },
+  label: {
+    textTransform: 'capitalize',
+  },
     paper: {
       marginTop: theme.spacing(8),
       display: 'flex',
@@ -108,7 +123,8 @@ function Home(props) {
         </Typography>
         <form className={classes.form} 
         noValidate
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+>
           <TextField
             variant="outlined"
             margin="normal"
@@ -119,6 +135,10 @@ function Home(props) {
             name="username"
             autoComplete="username"
             autoFocus
+            classes={{
+              root: classes.root, // class name, e.g. `classes-nesting-root-x`
+              label: classes.label, // class name, e.g. `classes-nesting-label-x`
+            }}
             value={username}
             onChange={handleChangeUsername}
           />
@@ -134,6 +154,10 @@ function Home(props) {
             autoComplete="current-password"
             value={password}
             onChange={handleChangePassword}
+            classes={{
+              root: classes.root, // class name, e.g. `classes-nesting-root-x`
+              label: classes.label, // class name, e.g. `classes-nesting-label-x`
+            }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
