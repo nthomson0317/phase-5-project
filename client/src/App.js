@@ -12,9 +12,25 @@ import NavBar from './components/NavBar'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-//////
+//////THEME/////
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: "#2E2EFF",
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: "#ffc0cb",
+    },
+    tertiary: {
+      main: "#808080"
+    }
+  },
+});
 
 function App(props) {
 
@@ -103,8 +119,8 @@ function App(props) {
   return (
 
     <div>
-          {/* <ThemeProvider theme={themeDark}>
-      <CssBaseline /> */}
+          <ThemeProvider theme={theme}>
+      {/* <CssBaseline />  */}
       <NavBar
 
         history={props.history}/>
@@ -118,7 +134,7 @@ function App(props) {
       <Route path = "/playlist" render={renderPlaylist}/>
       <Route exact path="/" render={renderHome} />
     </Switch>
-    {/* </ThemeProvider> */}
+    </ThemeProvider>
 
     </div>
   );

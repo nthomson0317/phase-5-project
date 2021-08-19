@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      backgroundColor: theme.palette.tertiary.main
       
     },
     avatar: {
@@ -33,10 +34,12 @@ const useStyles = makeStyles((theme) => ({
     form: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
+      color: theme.palette.secondary.main
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
+
   }));
 
 function Home(props) {
@@ -90,12 +93,12 @@ function Home(props) {
     }
 
     return (
-      <div>
+      <div className={classes.paper}>
         <Card>
-          <img src={header}/>
+          <img src={header} />
         </Card>
       
-          <Container component="main" maxWidth="xs"  >
+          <Container component="main" maxWidth="xs" className={classes.paper}  >
 
          <CssBaseline />
             <div className={classes.paper}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
@@ -8,13 +8,16 @@ import ListItem from '@material-ui/core/ListItem';
 import header from '../images/Orchid_header.jpg'
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
 
 const drawerWidth = 200;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => 
+  createStyles({
   root: {
-    display: 'flex',
+      color: theme.palette.secondary.main,
   },
+
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -25,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     background: "#B0B3BA"
     
   },
+//   multilineColor:{
+//     color:'red'
+// }
 
 }));
 
@@ -121,7 +127,16 @@ const handleHomeClick = (e) => {
       
     </List>
     </Box>
+    <br></br>
+    <Divider/>
+      <br></br>
+    <form className={classes.root} noValidate autoComplete="off">
+  <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined" borderRadius={16}
+        color={classes.root.color}
+       />
+</form>
     </Drawer>
+
   </div>
 
   )
