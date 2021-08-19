@@ -9,6 +9,7 @@ import CompositionsContainer from './components/Compositions/CompositionsContain
 import Register from './components/Register'
 import PlaylistContainer from './components/Playlist/PlaylistContainer'
 import NavBar from './components/NavBar'
+import header from './images/Orchid_header.jpg'
 //REACT ROUTER
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -118,10 +119,11 @@ function App(props) {
 
   return (
 
-    <div>
+    <div style={{backgroundColor: theme.palette.tertiary.main}}>
           <ThemeProvider theme={theme}>
       {/* <CssBaseline />  */}
-      <NavBar
+      <img src={header} />
+      <NavBar style={{backgroundColor: theme.palette.tertiary.main}}
 
         history={props.history}/>
     <Switch>

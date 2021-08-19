@@ -94,10 +94,7 @@ function Home(props) {
 
     return (
       <div className={classes.paper}>
-        <Card>
-          <img src={header} />
-        </Card>
-      
+
           <Container component="main" maxWidth="xs" className={classes.paper}  >
 
          <CssBaseline />
