@@ -12,6 +12,13 @@ import { TextField } from '@material-ui/core';
 
 const drawerWidth = 200;
 
+const defaultProps = {
+  // bgcolor: theme.palette.tertiary.main,
+  m: 1,
+  border: 1,
+  style: { width: '5rem', height: '5rem' },
+};
+
 const useStyles = makeStyles((theme) => 
   createStyles({
   root: {
@@ -25,12 +32,12 @@ const useStyles = makeStyles((theme) =>
   },
   drawerPaper: {
     width: drawerWidth,
-    background: "#B0B3BA"
+    background: theme.palette.tertiary.main,
+    borderWidth: "2px",
+    borderColor: theme.palette.secondary.main,
     
   },
-//   multilineColor:{
-//     color:'red'
-// }
+
 
 }));
 
@@ -70,8 +77,9 @@ const handleHomeClick = (e) => {
       variant="permanent"
       classes={{
         paper: classes.drawerPaper,
+        notchedOutline: classes.notchedOutline
       }}
-      anchor="left"
+
     >
       <div className={classes.toolbar} />
       <br></br>
