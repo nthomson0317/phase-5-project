@@ -43,12 +43,6 @@ const useStyles = makeStyles((theme) =>
 
 export default function NavBar(props) {
 const classes = useStyles();
-const [state, setState] = React.useState({
-  top: false,
-  left: false,
-  bottom: false,
-  right: false,
-});
 
 const handleHomeClick = (e) => {
     props.history.push(`/`);
