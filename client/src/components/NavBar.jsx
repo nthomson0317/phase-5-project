@@ -12,12 +12,6 @@ import { TextField } from '@material-ui/core';
 
 const drawerWidth = 200;
 
-const defaultProps = {
-  // bgcolor: theme.palette.tertiary.main,
-  m: 1,
-  border: 1,
-  style: { width: '5rem', height: '5rem' },
-};
 
 const useStyles = makeStyles((theme) => 
   createStyles({
@@ -35,6 +29,7 @@ const useStyles = makeStyles((theme) =>
     background: theme.palette.tertiary.main,
     borderWidth: "2px",
     borderColor: theme.palette.secondary.main,
+    borderRadius: "16"
     
   },
 
@@ -77,11 +72,8 @@ const handleHomeClick = (e) => {
       variant="permanent"
       classes={{
         paper: classes.drawerPaper,
-        notchedOutline: classes.notchedOutline
       }}
-
     >
-      <div className={classes.toolbar} />
       <br></br>
       <img src={header}
       id="logo"
@@ -97,6 +89,7 @@ const handleHomeClick = (e) => {
       <Box
         display="flex"
         justifyContent="center"
+        alignContent="center"
         alignItems="center"
         borderRadius={16}
         borderColor="#ffc0cb"
@@ -138,12 +131,8 @@ const handleHomeClick = (e) => {
     <br></br>
     <Divider/>
       <br></br>
-    <form className={classes.root} noValidate autoComplete="off">
+    <form  noValidate autoComplete="off">
   <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"             
-              classes={{
-              root: classes.root, // class name, e.g. `classes-nesting-root-x`
-              label: classes.label, // class name, e.g. `classes-nesting-label-x`
-            }}
         
        />
 </form>
