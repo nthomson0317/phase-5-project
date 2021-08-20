@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import header from '../images/Orchid_header.jpg'
+import header from '../images/piano_logo.jpg'
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme) =>
     borderRadius: "16"
     
   },
+
+  divider: {
+    backgroundColor: theme.palette.secondary.main,
+    borderWidth: "2px"
+  }
 
 
 }));
@@ -84,7 +89,7 @@ const handleHomeClick = (e) => {
         display: "block"
       }}></img>
       <br></br>
-      <Divider/>
+      <Divider className={classes.divider}/>
       <br></br>
       <Box
         display="flex"
@@ -130,7 +135,7 @@ const handleHomeClick = (e) => {
     </List>
     </Box>
     <br></br>
-    <Divider/>
+    <Divider className={classes.divider}/>
       <br></br>
     <form  noValidate autoComplete="off">
   <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"  
