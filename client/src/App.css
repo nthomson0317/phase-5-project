@@ -48,9 +48,9 @@ img#logo {
 
 }
 
-.textfield {
-  border-style: solid;
-  border-color:"#ffc0cb";
+#navbox {
+  margin-left: auto;
+  margin-right: auto;
   
 }
 

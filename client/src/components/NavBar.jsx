@@ -94,7 +94,8 @@ const handleHomeClick = (e) => {
         borderRadius={16}
         borderColor="#ffc0cb"
         border={2}
-        width="75%">
+        width="75%"
+        id="navbox">
         <List>
         <ListItem>
            <Button onClick={handleHomeClick}
@@ -132,7 +133,8 @@ const handleHomeClick = (e) => {
     <Divider/>
       <br></br>
     <form  noValidate autoComplete="off">
-  <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"             
+  <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"  
+  borderRadius={16}           
         
        />
 </form>
