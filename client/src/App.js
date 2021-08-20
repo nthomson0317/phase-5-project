@@ -21,14 +21,14 @@ const theme = createTheme({
   palette: {
     primary: {
       // Purple and green play nicely together.
-      main: "#2E2EFF",
+      main: "#4f3fff",
     },
     secondary: {
       // This is green.A700 as hex.
       main: "#ffc0cb",
     },
     tertiary: {
-      main: "#808080"
+      main: "#b8b4b7"
     }
   },
 });

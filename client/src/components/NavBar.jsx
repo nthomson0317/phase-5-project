@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) =>
   },
   drawerPaper: {
     width: drawerWidth,
-    background: theme.palette.tertiary.main,
+    background: theme.palette.primary.main,
     borderWidth: "2px",
     borderColor: theme.palette.secondary.main,
     borderRadius: "16"
