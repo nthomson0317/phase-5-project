@@ -8,8 +8,6 @@ import PlaylistPlayer from './PlaylistPlayer'
 import NavBar from '../NavBar'
 import {withRouter} from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import header from '../../images/Orchid_header.jpg'
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.paper,
     },
     button: {
-      justifyContent: 'center',
-      background: 'linear-gradient(45deg, #ffc0cb 30%, #FF8E53 90%)',
+    justifyContent: 'center',
+    background: 'linear-gradient(45deg, #ffc0cb 30%, #FF8E53 90%)',
     borderRadius: 3,
     border: 0,
     color: 'white',
@@ -39,55 +37,51 @@ function PlaylistContainer(props) {
   const handleClick = () => {
     setToggled(!toggled)
   }
-    console.log(props)
+
     return (
         <div>
-
             <Typography gutterBottom variant="h1" component="h2" align="center">
               {props.playlist.name}
             </Typography>
             <div>
-          <NavBar
+            <NavBar
             history={props.history}/>
             <br></br>
             <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
-          >
-           <Button className={classes.button} variant="outlined" color="secondary" 
+            >
+            <Button className={classes.button} variant="outlined" color="secondary" 
               onClick={handleClick}>
               Play Composition
             </Button>
-      <br></br>
-      <br></br>
-      <div>
-          {toggled ?  <PlaylistPlayer /> :  null}
+            <br></br>
+            <br></br>
+              <div>
+                {toggled ?  <PlaylistPlayer /> :  null}
+              </div>
+                </Box>
+                <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                >
+                <List className={classes.root} >
+                {props.playlist.playlist_compositions.map((comp) => {
+                const labelId = `checkbox-list-label-${comp}`;
+                  return (
+                    <Playlist
+                      labelId={labelId}
+                      comp={comp}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                      );
+                })}
+                </List>
+                </Box>
+            </div> 
           </div>
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-        <List className={classes.root} >
-          {props.playlist.playlist_compositions.map((comp) => {
-          const labelId = `checkbox-list-label-${comp}`;
-
-        return (
-          <Playlist
-          labelId={labelId}
-          comp={comp}
-          setCurrentComposition={props.setCurrentComposition}
-          setUser={props.setUser}/>
-
-          );
-          })}
-        </List>
-        </Box>
-          </div>
-            
-      </div>
     )
 }
 
