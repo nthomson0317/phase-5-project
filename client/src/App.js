@@ -20,11 +20,9 @@ import { ThemeProvider } from '@material-ui/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      // Purple and green play nicely together.
       main: "#4f3fff",
     },
     secondary: {
-      // This is green.A700 as hex.
       main: "#ffc0cb",
     },
     tertiary: {
@@ -120,30 +118,26 @@ function App(props) {
   return (
 
     <div style={{backgroundColor: theme.palette.tertiary.main}}>
-          <ThemeProvider theme={theme}>
-      {/* <CssBaseline />  */}
+      <ThemeProvider theme={theme}>
       <img src={header} />
       <NavBar style={{backgroundColor: theme.palette.tertiary.main}}
-
         history={props.history}/>
-    <Switch>
-      <Route path="/register" render={ renderRegistrationForm } />
-      <Route exact path="/periods" render={renderPeriods} />
-      <Route path="/composers" render={renderComposers} />
-      <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />
-      <Route exact path="/composition" render={renderCompositions} />
-      <Route exact path="/periods/:period_name/composers/:composer_name/compositions" render={renderComposerCompositions} />
-      <Route path = "/playlist" render={renderPlaylist}/>
-      <Route exact path="/" render={renderHome} />
-    </Switch>
-    </ThemeProvider>
-
+        <Switch>
+          <Route path="/register" render={ renderRegistrationForm } />
+          <Route exact path="/periods" render={renderPeriods} />
+          <Route path="/composers" render={renderComposers} />
+          <Route exact path="/periods/:period_name/composers" render={renderPeriodComposers} />
+          <Route exact path="/composition" render={renderCompositions} />
+          <Route exact path="/periods/:period_name/composers/:composer_name/compositions" render={renderComposerCompositions} />
+          <Route path = "/playlist" render={renderPlaylist}/>
+          <Route exact path="/" render={renderHome} />
+        </Switch>
+      </ThemeProvider>
     </div>
   );
 }
 
 let setPeriods = (allPeriods) => {
-
   return {
     type: "GET_PERIODS",
     payload: allPeriods
@@ -184,7 +178,6 @@ let mapStateToProps = (globalState) => {
     currentPeriod: globalState.currentPeriodInfo.currentPeriod,
   }
 }
-
 
 let mapDispatchToProps = {
   setPeriods,

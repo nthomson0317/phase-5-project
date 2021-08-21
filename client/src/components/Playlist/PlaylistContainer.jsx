@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function PlaylistContainer(props) {
-
   const classes = useStyles();
   const [toggled, setToggled] = React.useState(false)
 

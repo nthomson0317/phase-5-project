@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 600,
       backgroundColor: theme.palette.background.paper,
     },
-
       button: {
         margin: theme.spacing(2),
       },
@@ -44,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 
       }
 
-
       ////DELETE FROM PLAYLIST/////
       const handleDeleteCompositionFromPlaylist = () => {
       fetch(`http://localhost:3000/playlist_compositions/${props.comp.id}`, {
@@ -54,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
               "authorization": props.userToken
             },
             })
-      .then(res => res.json())
-      .then((res) => deleteCompositionFromPlaylistState(res))
+            .then(res => res.json())
+            .then((res) => deleteCompositionFromPlaylistState(res))
         }
 
 
@@ -71,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
           },
           token: props.currentUser.token})
         }
-
 
     return (
       <div>

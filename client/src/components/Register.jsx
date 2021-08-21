@@ -11,8 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useState } from 'react';
-import header from '../images/Orchid_header.jpg'
-import Card from '@material-ui/core/Card';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -26,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.secondary.main,
     },
     form: {
-      width: '100%', // Fix IE 11 issue.
+      width: '100%', 
       marginTop: theme.spacing(1),
     },
     submit: {
@@ -46,7 +44,6 @@ export default function Register(props) {
       let formData = { 
         username: username,    
         password: password}      
-        // props.handleSubmit(formData)
         console.log("Register form has been submitted")
 
         fetch("http://localhost:3000/users", {
@@ -56,19 +53,18 @@ export default function Register(props) {
             },
             body: JSON.stringify(formData),
         })
-                .then((r) => r.json())
-                .then((r) => handleResponse(r));
-
+            .then((r) => r.json())
+            .then((r) => handleResponse(r));
     }
 
     const handleResponse = (resp) => {
         if(resp.token){
-            console.log("User successful")
+          console.log("User successful")
         }
-            else {
-                alert("Messed up")
-            }
+        else {
+          alert("Messed up")
         }
+    }
     
   
     const handleChangeUsername = (e) => {
@@ -81,9 +77,6 @@ export default function Register(props) {
 
     return (
       <div>
-      <Card>
-      <img src={header}/>
-      </Card>
         <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

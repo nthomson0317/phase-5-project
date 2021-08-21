@@ -15,21 +15,10 @@ import Container from '@material-ui/core/Container';
 import {useState } from 'react';
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import Card from '@material-ui/core/Card';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // borderColor: theme.palette.secondary.main,
-    // style: { width: '5rem', height: '5rem' },
-    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     background: theme.palette.secondary.main
-    // borderRadius: 3,
-    // border: 0,
-    // color: 'white',
-    // height: 48,
-    // padding: '0 30px',
-    // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
   label: {
     textTransform: 'capitalize',
@@ -40,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: theme.palette.tertiary.main
-      
     },
     avatar: {
       margin: theme.spacing(1),
@@ -54,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
-
   }));
 
 function Home(props) {
@@ -77,13 +64,12 @@ function Home(props) {
         fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
-                 "Content-Type": "application/json",
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
         })
-                .then((r) => r.json())
-                .then((r) => handleResponse(r));
-
+            .then((r) => r.json())
+            .then((r) => handleResponse(r));
     }
 
     const handleResponse = (resp) => {
@@ -95,9 +81,7 @@ function Home(props) {
           else {
               alert("Incorrect username or password")
           }
-      console.log(resp)
       }
-  
   
     const handleChangeUsername = (e) => {
       setUsername(e.target.value)
@@ -109,12 +93,9 @@ function Home(props) {
 
     return (
       <div className={classes.paper}>
-
           <Container component="main" maxWidth="xs" className={classes.paper}  >
-
          <CssBaseline />
             <div className={classes.paper}>
-        
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -124,7 +105,7 @@ function Home(props) {
         <form className={classes.form} 
         noValidate
         onSubmit={handleSubmit}
->
+        >
           <TextField
             variant="outlined"
             margin="normal"
@@ -136,11 +117,11 @@ function Home(props) {
             autoComplete="username"
             autoFocus
             classes={{
-              root: classes.root, // class name, e.g. `classes-nesting-root-x`
-              label: classes.label, // class name, e.g. `classes-nesting-label-x`
+              root: classes.root, 
+              label: classes.label, 
             }}
-            value={username}
-            onChange={handleChangeUsername}
+              value={username}
+             onChange={handleChangeUsername}
           />
           <TextField
             variant="outlined"
@@ -155,8 +136,8 @@ function Home(props) {
             value={password}
             onChange={handleChangePassword}
             classes={{
-              root: classes.root, // class name, e.g. `classes-nesting-root-x`
-              label: classes.label, // class name, e.g. `classes-nesting-label-x`
+              root: classes.root, 
+              label: classes.label, 
             }}
           />
           <FormControlLabel
@@ -193,8 +174,6 @@ function Home(props) {
     )
 }
 
-
-
 let mapStateToProps = (globalState) => {
   let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
   return {
@@ -202,6 +181,5 @@ let mapStateToProps = (globalState) => {
     username: globalState.userInfo.username
   }
 }
-
 
 export default connect(mapStateToProps)(withRouter(Home))
