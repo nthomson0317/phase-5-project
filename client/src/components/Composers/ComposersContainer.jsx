@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2),
     },
     heroContent: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.tertiary.main,
       padding: theme.spacing(8, 0, 6),
     },
     heroButtons: {
@@ -54,9 +54,7 @@ function ComposersContainer(props) {
     
     return (
         <div>
-      <Card>
-        <img src={header}/>
-      </Card>
+
       <NavBar history={props.history}/>
         <React.Fragment>
         <CssBaseline />
