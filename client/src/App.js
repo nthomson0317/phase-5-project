@@ -40,6 +40,19 @@ function App(props) {
     });
   }, [])
 
+  useEffect(() => {
+    if(localStorage.token){
+      fetch("http://localhost:3000/me", {
+        headers: {
+          "authorization": localStorage.token
+        }
+      })
+        .then(res => res.json())
+        .then((res) => props.setUser(res))
+    }
+  }, [])
+
+
   let renderPeriods = (routerProps) => {
     return <PeriodsContainer 
     history={props.history}
