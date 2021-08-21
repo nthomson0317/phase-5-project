@@ -126,7 +126,10 @@ function App(props) {
     />
   }
 
-  console.log(props)
+  let logOutUser = () => {
+    props.logout()
+    localStorage.clear()
+  }
 
   return (
 
@@ -134,7 +137,8 @@ function App(props) {
       <ThemeProvider theme={theme}>
       <img src={header} />
       <NavBar style={{backgroundColor: theme.palette.tertiary.main}}
-        history={props.history}/>
+        history={props.history}
+        logOutUser = {logOutUser}/>
         <Switch>
           <Route path="/register" render={ renderRegistrationForm } />
           <Route exact path="/periods" render={renderPeriods} />
@@ -197,7 +201,7 @@ let mapDispatchToProps = {
   setCurrentComposition,
   setCurrentPeriod,
   setUser,
-  logout
+  logout,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

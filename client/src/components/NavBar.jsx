@@ -53,6 +53,11 @@ export default function NavBar(props) {
     props.history.push("/playlist")
   }
 
+  const handleLogOut = (e) => {
+    props.history.push("/")
+    props.logOutUser()
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -113,7 +118,7 @@ export default function NavBar(props) {
           </ListItem>
           <ListItem> 
             <Button
-              onClick={props.logout}
+              onClick={handleLogOut}
               style={{ color: "#F9C6E8", backgroundColor: '#264ECD' }}>
               Logout</Button>
           </ListItem>
