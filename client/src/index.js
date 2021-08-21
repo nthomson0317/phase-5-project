@@ -81,21 +81,12 @@ const userReducer = (state = initialUserState, action) => {
     return {
       ...state,
       ...initialUserState,
+      playlists: []
     }
 
   }
 }
-// const logOutReducer = (state = initialUserState, action) => {
-//   switch (action.type){
-//     case "LOGOUT_USER":
-//       return {
-//         ...state,
-//         ...initialUserState,
-//       }
-//     default:
-//       return state
-//     }
-//   }
+
 
 //CombineReducers take in a POJO as an argument
   //The keys of that POJO become the highest keys of global state
