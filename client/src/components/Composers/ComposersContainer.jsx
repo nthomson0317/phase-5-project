@@ -55,7 +55,7 @@ function ComposersContainer(props) {
     return (
         <div>
 
-      <NavBar history={props.history}/>
+      {/* <NavBar history={props.history}/> */}
         <React.Fragment>
         <CssBaseline />
         <main>

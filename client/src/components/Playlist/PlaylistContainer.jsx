@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
       justifyContent: 'center',
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      background: 'linear-gradient(45deg, #ffc0cb 30%, #FF8E53 90%)',
     borderRadius: 3,
     border: 0,
     color: 'white',
@@ -42,9 +42,7 @@ function PlaylistContainer(props) {
     console.log(props)
     return (
         <div>
-          <Card>
-            <img src={header}/>
-          </Card>
+
             <Typography gutterBottom variant="h1" component="h2" align="center">
               {props.playlist.name}
             </Typography>
