@@ -131,6 +131,10 @@ function App(props) {
     localStorage.clear()
   }
 
+  let searchBar = (e) => {
+    props.setSearchBar(e)
+  }
+
   return (
 
     <div style={{backgroundColor: theme.palette.tertiary.main}}>
@@ -139,7 +143,7 @@ function App(props) {
       <NavBar style={{backgroundColor: theme.palette.tertiary.main}}
         history={props.history}
         logOutUser = {logOutUser}
-        setSearchBar= {setSearchBar}/>
+        setSearchBar= {searchBar}/>
         <Switch>
           <Route path="/register" render={ renderRegistrationForm } />
           <Route exact path="/periods" render={renderPeriods} />

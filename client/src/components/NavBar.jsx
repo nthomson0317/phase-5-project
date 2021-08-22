@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) =>
   }
 }));
 
-function NavBar(props) {
+export default function NavBar(props) {
   const classes = useStyles();
 
   const handleHomeClick = (e) => {
@@ -135,8 +135,8 @@ function NavBar(props) {
       <br></br>
           <TextField noValidate autoComplete="off" 
                  onChange={onChange}
-                 value={props.currentSearchBar}
-            className={classes.root} 
+                //  value={props.currentSearchBar}
+                 className={classes.root} 
                  id="outlined-basic" 
                  label="Search" 
                  variant="outlined"  
@@ -146,10 +146,3 @@ function NavBar(props) {
     </div>
   )
 }
-
-let mapStateToProps = (globalState) => {
-  return {
-      searchBar: globalState.searchBarInfo.currentSearchBar
-  }
-}
-export default connect(mapStateToProps)(NavBar) 
