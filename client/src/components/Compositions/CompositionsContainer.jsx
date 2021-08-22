@@ -7,9 +7,9 @@ import Button from '@material-ui/core/Button';
 import CompositionPlayer from './CompositionPlayer'
 import NavBar from '../NavBar'
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import header from '../../images/Orchid_header.jpg'
 import Box from "@material-ui/core/Box";
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
  function CompositionsContainer(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
     const classes = useStyles();
     const [toggled, setToggled] = React.useState(false)
@@ -38,6 +39,14 @@ const useStyles = makeStyles((theme) => ({
 const handleClick = () => {
   setToggled(!toggled)
 }
+
+const handleDropdownClick = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+
+const handleDropdownClose = () => {
+  setAnchorEl(null);
+};
 
 /////DIVIDE COMPOSITIONS BY GENRE
 ///// MAP EACH GENRE INTO A SECTION OF THE PLAYLIST, DIVIDED BY GENRE NAME
@@ -66,6 +75,7 @@ console.log(props)
 
     return (
       <div>
+              
 
           <Typography gutterBottom variant="h1" component="h2" align="center">
             {props.composer.name}
@@ -93,6 +103,32 @@ console.log(props)
             </Box>
             <br></br>
             <br></br>
+            <Box
+          display="flex"
+          justifyContent="center"
+          alignContent="center"
+          alignItems="center"
+          borderRadius={16}
+          borderColor="#ffc0cb"
+          border={2}
+          width="75%"
+          id="navbox">
+        <Button aria-controls="simple-menu" aria-haspopup="true" align="center" onClick={handleDropdownClick}>
+        Categories
+      </Button>
+      </Box>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleDropdownClose}
+      >
+        <MenuItem onClick={handleDropdownClose}>Profile</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>My account</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Logout</MenuItem>
+      </Menu>
+            
             <Typography align="center" variant="h4">Orchestral</Typography>
             <Box
             display="flex"
