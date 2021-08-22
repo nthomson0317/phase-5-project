@@ -138,7 +138,8 @@ function App(props) {
       <img src={header} />
       <NavBar style={{backgroundColor: theme.palette.tertiary.main}}
         history={props.history}
-        logOutUser = {logOutUser}/>
+        logOutUser = {logOutUser}
+        setSearchBar= {setSearchBar}/>
         <Switch>
           <Route path="/register" render={ renderRegistrationForm } />
           <Route exact path="/periods" render={renderPeriods} />
@@ -188,6 +189,13 @@ let logout = () => {
   }
 }
 
+let setSearchBar = (currentSearch) => {
+  return {
+    type: "SET_SEARCHBAR",
+    payload: currentSearch
+  }
+}
+
 let mapStateToProps = (globalState) => {
   // let booleanOfWhetherTheyAreLoggedIn = !!globalState.userInfo.token
   return {
@@ -202,6 +210,7 @@ let mapDispatchToProps = {
   setCurrentPeriod,
   setUser,
   logout,
+  setSearchBar,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

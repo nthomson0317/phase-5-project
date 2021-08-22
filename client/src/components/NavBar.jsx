@@ -9,6 +9,8 @@ import header from '../images/piano_logo.jpg'
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
+import {connect} from 'react-redux'
+
 
 const drawerWidth = 200;
 
@@ -34,7 +36,7 @@ const useStyles = makeStyles((theme) =>
   }
 }));
 
-export default function NavBar(props) {
+function NavBar(props) {
   const classes = useStyles();
 
   const handleHomeClick = (e) => {
@@ -58,6 +60,10 @@ export default function NavBar(props) {
     props.logOutUser()
   }
 
+  const onChange = (event) => {
+    props.setSearchBar(event.target.value)
+  }
+  console.log(props)
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -127,12 +133,23 @@ export default function NavBar(props) {
       <br></br>
           <Divider className={classes.divider}/>
       <br></br>
-          <form  noValidate autoComplete="off">
-            <TextField className={classes.root} id="outlined-basic" label="Search" variant="outlined"  
-              borderRadius={16}             
+          <TextField noValidate autoComplete="off" 
+                 onChange={onChange}
+                 value={props.currentSearchBar}
+            className={classes.root} 
+                 id="outlined-basic" 
+                 label="Search" 
+                 variant="outlined"  
+                 borderRadius={16}             
             />
-          </form>
       </Drawer>
     </div>
   )
 }
+
+let mapStateToProps = (globalState) => {
+  return {
+      searchBar: globalState.searchBarInfo.currentSearchBar
+  }
+}
+export default connect(mapStateToProps)(NavBar) 

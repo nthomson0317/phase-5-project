@@ -60,6 +60,22 @@ const currentCompositionReducer = (state = initialCurrentCompositionState, actio
   }
 }
 
+const initialSearchBarState = {
+  currentSearchBar: ""
+}
+
+const currentSearchBarReducer = (state = initialSearchBarState, action) => {
+  switch (action.type) {
+    case "SET_SEARCHBAR":
+      return {
+        ...state,
+        currentSearchBar: action.payload
+      }
+      default:
+        return state
+  }
+}
+
 const initialUserState = {
   username: "",
   token: ""
@@ -87,7 +103,6 @@ const userReducer = (state = initialUserState, action) => {
   }
 }
 
-
 //CombineReducers take in a POJO as an argument
   //The keys of that POJO become the highest keys of global state
     //The values of that POJO are the state objects being returned by the reducer
@@ -96,6 +111,7 @@ let rootReducer = combineReducers({
   currentPeriodInfo: currentPeriodReducer,
   currentCompositionInfo: currentCompositionReducer,
   userInfo: userReducer,
+  searchBarInfo: currentSearchBarReducer
 })
 
 let store = createStore(

@@ -71,7 +71,7 @@ function Home(props) {
             .then((r) => r.json())
             .then((r) => handleResponse(r));
     }
-
+ 
     const handleResponse = (resp) => {
       if(resp.token){
         localStorage.token = resp.token
