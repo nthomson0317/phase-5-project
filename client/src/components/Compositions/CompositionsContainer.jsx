@@ -114,7 +114,7 @@ console.log(props)
           width="75%"
           id="navbox">
         <Button aria-controls="simple-menu" aria-haspopup="true" align="center" onClick={handleDropdownClick}>
-        Categories
+        Category
       </Button>
       </Box>
       <Menu
