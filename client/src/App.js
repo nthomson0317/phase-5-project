@@ -104,7 +104,8 @@ function App(props) {
       history={props.history}
       composer={composer}
       setCurrentComposition={props.setCurrentComposition}
-      setUser={props.setUser}/>
+      setUser={props.setUser}
+      setCurrentCompositionType={props.setCurrentCompositionType}/>
     }
 
   const renderRegistrationForm = (routerProps) => {

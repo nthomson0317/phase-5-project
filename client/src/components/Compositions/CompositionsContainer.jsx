@@ -42,13 +42,15 @@ const handleClick = () => {
 
 const handleDropdownClick = (event) => {
   setAnchorEl(event.currentTarget);
+
 };
 
 //set state to type of composition
 
 //in render, check if state == type of composition || null, if so, render those compositions
 
-const handleDropdownClose = () => {
+const handleDropdownClose = (event) => {
+  props.setCurrentCompositionType(event.currentTarget.innerText)
   setAnchorEl(null);
 };
 
