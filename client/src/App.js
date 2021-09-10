@@ -173,6 +173,13 @@ let setCurrentComposition = (currentComposition) => {
   }
 }
 
+let setCurrentCompositionType = (currentCompositionType) => {
+  return {
+    type: "SET_COMPOSITION_TYPE",
+    payload: currentCompositionType
+  }
+}
+
 let setCurrentPeriod = (currentPeriod) => {
   return {
     type: "GET_CURRENT_PERIOD",
@@ -215,6 +222,7 @@ let mapDispatchToProps = {
   setUser,
   logout,
   setSearchBar,
+  setCurrentCompositionType,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
