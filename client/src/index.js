@@ -76,6 +76,22 @@ const currentSearchBarReducer = (state = initialSearchBarState, action) => {
   }
 }
 
+const initialCompositionTypeState = {
+  currentCompositionType: ""
+}
+
+const currentCompositionTypeReducer = (state = initialCompositionTypeState, action) => {
+  switch (action.type) {
+    case "SET_COMPOSITION_TYPE":
+      return {
+        ...state,
+        currentCompositionType: action.payload
+      }
+      default:
+        return state
+  }
+}
+
 const initialUserState = {
   username: "",
   token: ""
@@ -112,6 +128,7 @@ let rootReducer = combineReducers({
   currentCompositionInfo: currentCompositionReducer,
   userInfo: userReducer,
   searchBarInfo: currentSearchBarReducer,
+  currentCompositionType: currentCompositionTypeReducer,
 })
 
 let store = createStore(
