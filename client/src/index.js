@@ -128,7 +128,7 @@ let rootReducer = combineReducers({
   currentCompositionInfo: currentCompositionReducer,
   userInfo: userReducer,
   searchBarInfo: currentSearchBarReducer,
-  currentCompositionType: currentCompositionTypeReducer,
+  currentCompositionTypeInfo: currentCompositionTypeReducer,
 })
 
 let store = createStore(

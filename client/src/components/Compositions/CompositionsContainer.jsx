@@ -77,7 +77,20 @@ const stageCompositions = props.composer.compositions.filter((compObj) => {
   return compObj.genre == 'Chamber'
 })
 
-console.log(props)
+console.log(props.currentCompositionType)
+
+
+const orchestral = () => {
+ if (props.currentCompositionType == "Orchestral" || null){
+   return true
+ } 
+ else {
+   return false
+ }
+}
+
+// console.log("Orchestral:" orchestral())
+
 
     return (
       <div>
@@ -145,7 +158,7 @@ console.log(props)
           >
             
               <List className={classes.root}>
-                {orchestralCompositions.map((value) => {
+                { orchestral ? orchestralCompositions.map((value) => {
                 const labelId = `checkbox-list-label-${value}`;
                   return (
                     <Composition
@@ -154,7 +167,7 @@ console.log(props)
                       setCurrentComposition={props.setCurrentComposition}
                       setUser={props.setUser}/>
                     );
-                })}
+                }) : null }
               </List>
               <br></br>
               </Box>
@@ -240,7 +253,8 @@ console.log(props)
 
 let mapStateToProps = (globalState) => {
   return {
-      currentComposition: globalState.currentCompositionInfo.currentComposition
+      currentComposition: globalState.currentCompositionInfo.currentComposition,
+      currentCompositionType: globalState.currentCompositionTypeInfo.currentCompositionType
   }
 }
 export default connect(mapStateToProps)(CompositionsContainer) 
