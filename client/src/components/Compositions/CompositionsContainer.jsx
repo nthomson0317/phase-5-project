@@ -124,9 +124,11 @@ console.log(props)
         open={Boolean(anchorEl)}
         onClose={handleDropdownClose}
       >
-        <MenuItem onClick={handleDropdownClose}>Profile</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>My account</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>Logout</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Orchestral</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Keyboard</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Vocal</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Chamber</MenuItem>
+        <MenuItem onClick={handleDropdownClose}>Stage</MenuItem>
       </Menu>
             
             <Typography align="center" variant="h4">Orchestral</Typography>
