@@ -81,13 +81,49 @@ console.log(props.currentCompositionType)
 
 
 const orchestral = () => {
- if (props.currentCompositionType == "Orchestral" || null){
+ if (props.currentCompositionType == "Orchestral") {
    return true
  } 
  else {
    return false
  }
 }
+
+const vocal = () => {
+  if (props.currentCompositionType == "Vocal") {
+    return true
+  } 
+  else {
+    return false
+  }
+ }
+
+ const chamber = () => {
+  if (props.currentCompositionType == "Chamber") {
+    return true
+  } 
+  else {
+    return false
+  }
+ }
+
+ const keyboard = () => {
+  if (props.currentCompositionType == "Keyboard") {
+    return true
+  } 
+  else {
+    return false
+  }
+ }
+
+ const stage = () => {
+  if (props.currentCompositionType == "Stage") {
+    return true
+  } 
+  else {
+    return false
+  }
+ }
 
 // console.log("Orchestral:" orchestral())
 
@@ -150,7 +186,7 @@ const orchestral = () => {
         <MenuItem onClick={handleDropdownClose}>Stage</MenuItem>
       </Menu>
             
-            <Typography align="center" variant="h4">Orchestral</Typography>
+            <Typography align="center" variant="h4">{props.currentCompositionType}</Typography>
             <Box
             display="flex"
             justifyContent="center"
@@ -158,7 +194,37 @@ const orchestral = () => {
           >
             
               <List className={classes.root}>
-                { orchestral ? orchestralCompositions.map((value) => {
+                { props.currentCompositionType == "Chamber" ? orchestralCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                }) : null }
+                { props.currentCompositionType == "Keyboard"? keyboardCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                }) : null }
+                { props.currentCompositionType == "Vocal"? vocalCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                }) : null }
+                { props.currentCompositionType == "Stage" ? stageCompositions.map((value) => {
                 const labelId = `checkbox-list-label-${value}`;
                   return (
                     <Composition
@@ -169,7 +235,7 @@ const orchestral = () => {
                     );
                 }) : null }
               </List>
-              <br></br>
+              {/* <br></br>
               </Box>
               <Typography align="center" variant="h4">Keyboard</Typography>
               <Box
@@ -245,7 +311,7 @@ const orchestral = () => {
                       setUser={props.setUser}/>
                     );
                 })}
-              </List>
+              </List> */}
               </Box>
       </div>
     )
