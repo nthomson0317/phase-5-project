@@ -234,6 +234,16 @@ const vocal = () => {
                       setUser={props.setUser}/>
                     );
                 }) : null }
+                { props.currentCompositionType == "Orchestral" ? orchestralCompositions.map((value) => {
+                const labelId = `checkbox-list-label-${value}`;
+                  return (
+                    <Composition
+                      labelId={labelId}
+                      value={value}
+                      setCurrentComposition={props.setCurrentComposition}
+                      setUser={props.setUser}/>
+                    );
+                }) : null }
               </List>
               {/* <br></br>
               </Box>
