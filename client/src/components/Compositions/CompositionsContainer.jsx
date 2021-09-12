@@ -167,9 +167,9 @@ const vocal = () => {
           justifyContent="center"
           alignContent="center"
           alignItems="center"
-          borderRadius={16}
-          borderColor="#ffc0cb"
-          border={2}
+          // borderRadius={16}
+          // borderColor="#ffc0cb"
+          // border={2}
           width="75%"
           id="navbox">
         <Button className={classes.button} aria-controls="simple-menu" aria-haspopup="true" align="center" onClick={handleDropdownClick}>
@@ -190,7 +190,8 @@ const vocal = () => {
         <MenuItem className={classes.menu} onClick={handleDropdownClose}>Chamber</MenuItem>
         <MenuItem className={classes.menu} onClick={handleDropdownClose}>Stage</MenuItem>
       </Menu>
-            
+      <br></br>
+      <br></br> 
             <Typography align="center" variant="h4">{props.currentCompositionType}</Typography>
             <Box
             display="flex"
