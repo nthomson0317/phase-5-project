@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     height: 48,
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    },
+
+    menu: {
+      background: 'linear-gradient(45deg, #ffc0cb 30%, #FF8E53 90%)'
     }
   }));
 
@@ -173,17 +177,18 @@ const vocal = () => {
       </Button>
       </Box>
       <Menu
+      
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleDropdownClose}
       >
-        <MenuItem onClick={handleDropdownClose}>Orchestral</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>Keyboard</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>Vocal</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>Chamber</MenuItem>
-        <MenuItem onClick={handleDropdownClose}>Stage</MenuItem>
+        <MenuItem className={classes.menu} onClick={handleDropdownClose}>Orchestral</MenuItem>
+        <MenuItem className={classes.menu} onClick={handleDropdownClose}>Keyboard</MenuItem>
+        <MenuItem className={classes.menu} onClick={handleDropdownClose}>Vocal</MenuItem>
+        <MenuItem className={classes.menu} onClick={handleDropdownClose}>Chamber</MenuItem>
+        <MenuItem className={classes.menu} onClick={handleDropdownClose}>Stage</MenuItem>
       </Menu>
             
             <Typography align="center" variant="h4">{props.currentCompositionType}</Typography>
