@@ -168,7 +168,7 @@ const vocal = () => {
           border={2}
           width="75%"
           id="navbox">
-        <Button aria-controls="simple-menu" aria-haspopup="true" align="center" onClick={handleDropdownClick}>
+        <Button className={classes.button} aria-controls="simple-menu" aria-haspopup="true" align="center" onClick={handleDropdownClick}>
         Category
       </Button>
       </Box>
