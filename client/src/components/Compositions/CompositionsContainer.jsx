@@ -154,7 +154,7 @@ const vocal = () => {
           >
           <Button className={classes.button} variant="outlined" color="secondary"
            onClick={handleClick} align="center">
-           Play Composition
+           Spotify Player
           </Button>
             <div>
               {toggled ?  <CompositionPlayer /> :  null}
